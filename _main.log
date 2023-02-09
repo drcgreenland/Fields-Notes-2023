@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.8.28) (preloaded format=xelatex 2023.2.6)  9 FEB 2023 12:05
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.8.28) (preloaded format=xelatex 2023.2.6)  9 FEB 2023 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -874,21 +874,51 @@ No file _main.toc.
 
 ]
 Chapter 1.
+File: Figures/blue_red_circs.png Graphic file (type bmp)
+<Figures/blue_red_circs.png>
+File: Figures/blue_red_FIELD.png Graphic file (type bmp)
+<Figures/blue_red_FIELD.png>
+[5]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 150.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 150.
+File: Figures/isotherms.png Graphic file (type bmp)
+<Figures/isotherms.png>
+[6]
 
-LaTeX Warning: File `Figures/blue_red_circs.png' not found on input line 125.
+LaTeX Warning: Command \i invalid in math mode on input line 215.
 
-! Unable to load picture or PDF file 'Figures/blue_red_circs.png'.
-<to be read again> 
-                   }
-l.125 ...=\textheight]{Figures/blue_red_circs.png}
+
+LaTeX Warning: Command \j invalid in math mode on input line 215.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 215.
+
+! Argument of \TU\k has an extra }.
+<inserted text> 
+                \par 
+l.215 ... + \frac{\partial T}{\partial y} \hat{\k}
                                                    
 Here is how much of TeX's memory you used:
- 18717 strings out of 410536
- 341070 string characters out of 2812987
- 847471 words of memory out of 3000000
- 39650 multiletter control sequences out of 15000+600000
- 472865 words of font info for 63 fonts, out of 8000000 for 9000
+ 18735 strings out of 410536
+ 341704 string characters out of 2812987
+ 857471 words of memory out of 3000000
+ 39668 multiletter control sequences out of 15000+600000
+ 475726 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 86i,6n,121p,1004b,358s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 86i,9n,121p,1004b,358s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on _main.pdf (4 pages).
+Output written on _main.pdf (6 pages).

@@ -24,6 +24,8 @@ where one inanimate object is "aware\" that another has arrived.
 
 ::: figurehere
 ![image](Figures/blue_red_circs.png){width="80mm"}
+```{r BRcircs, fig.align = 'center', out.width = "25%", fig.cap = "A figure"}
+```
 :::
 
 We understand that the first body sets up a field and the second body
