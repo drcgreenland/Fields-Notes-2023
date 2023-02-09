@@ -1,17 +1,3 @@
---- 
-title: "Fields"
-author: "Claire Greenland"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-biblio-style: apalike
-link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This is a book."
----
-
-
 # Fields -- Basics
 
 ## Aims of this section {#aims-of-this-section .unnumbered}
