@@ -23,7 +23,7 @@
 <meta name="author" content="Claire Greenland" />
 
 
-<meta name="date" content="2023-02-09" />
+<meta name="date" content="2023-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,15 +169,6 @@
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="circuits.html"><a href="circuits.html#summary-1"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sec:Sols.html"><a href="sec:Sols.html"><i class="fa fa-check"></i><b>5</b> Exercise solutions</a>
-<ul>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ex1Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringEx2Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#GaussLineExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#cyclotronExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#Kirchoff_ExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -214,8 +205,10 @@ charges.</p>
 </div>
 </div>
 <p>The force on <span class="math inline">\(q_2\)</span> due to <span class="math inline">\(q_1\)</span> is given by:</p>
-<p><span class="math display">\[\label{eq:coulomb}
-\F_{12}= \frac{1}{4\pi \epsilon_0} \frac{q_1 q_2}{r_{12}^2} \hat{\r}_{12}\]</span></p>
+<p><span class="math display" id="eq:coulombs">\[\begin{equation}
+\tag{2.1}
+\mathbf{F}_{12}= \frac{1}{4\pi \epsilon_0} \frac{q_1 q_2}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}\]</span></p>
 <p>The force on <span class="math inline">\(q_2\)</span> is directed <strong>away from</strong> <span class="math inline">\(q_1\)</span> if <span class="math inline">\(q_1 q_2\)</span> is
 positive (i.e. when the charges have the same sign - like charges
 repel). If <span class="math inline">\(q_1 q_2\)</span> is negative (charges have different signs), the
@@ -223,16 +216,18 @@ force on <span class="math inline">\(q_2\)</span> is directed <strong>towards</s
 </div>
 <div id="the-electric-field" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> The electric field<a href="electric-fields.html#the-electric-field" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The electric field (<span class="math inline">\(\E\)</span>) is defined in terms of the force on a test
+<p>The electric field (<span class="math inline">\(\mathbf{E}\)</span>) is defined in terms of the force on a test
 charge <span class="math inline">\(q_0\)</span>. The force on <span class="math inline">\(q_0\)</span> due to another charge <span class="math inline">\(q\)</span> is</p>
-<p><span class="math display">\[\begin{aligned}
-\F = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\r}_{12}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:forceQ0">\[\begin{equation}
+\tag{2.2}
+\mathbf{F} = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}\]</span></p>
 <p>The electric field is the force divided by the magnitude of the test
 charge – the field is independent of the charge used to test it.</p>
-<p><span class="math display">\[\begin{aligned}
-\E = \frac{\F}{q_0} = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\r}_{12}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:fieldQ">\[\begin{equation}
+\tag{2.3}
+\mathbf{E} = \frac{\mathbf{F}}{q_0} = \frac{1}{4\pi \epsilon_0} \frac{q}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}\]</span></p>
 </div>
 <div id="principle-of-superposition" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> Principle of superposition<a href="electric-fields.html#principle-of-superposition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -244,15 +239,16 @@ charge – the field is independent of the charge used to test it.</p>
 <div class="figcaption">image</div>
 </div>
 </div>
-<p>The principle of superposition says that the <strong>resultant force</strong> <span class="math inline">\(\F_R\)</span>
+<p>The principle of superposition says that the <strong>resultant force</strong> <span class="math inline">\(\mathbf{F}_R\)</span>
 on charge 1 due to charge 2 and charge 3 is simply the vector sum of the
 forces due to the individual charges.</p>
 <p>The principle of superposition can be used to calculate the electric
-field <span class="math inline">\(\E\)</span> for a group of charges by summing the fields due to all
+field <span class="math inline">\(\mathbf{E}\)</span> for a group of charges by summing the fields due to all
 charges present.</p>
-<p><span class="math display">\[\begin{aligned}
-\E = \E_1 + \E_2 + \E_3 + ... = \sum_i \E_i
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:superposition">\[\begin{equation}
+\tag{2.4}
+\mathbf{E} = \mathbf{E}_1 + \mathbf{E}_2 + \mathbf{E}_3 + ... = \sum_i \mathbf{E}_i
+\end{equation}\]</span></p>
 </div>
 <div id="electric-dipole-field" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> Electric dipole field<a href="electric-fields.html#electric-dipole-field" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -275,12 +271,14 @@ charges.</p>
 </div>
 </div>
 <p>The magnitude of the field at point <span class="math inline">\(P\)</span> is given by</p>
-<p><span class="math display">\[\label{eq:fieldatP}
-E = \frac{1}{4 \pi \epsilon_0} \frac{qd}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}\]</span></p>
-<p>and it is in the <span class="math inline">\(-\hat{\j}\)</span> (or <span class="math inline">\(-\hat{\y}\)</span>) direction.</p>
+<p><span class="math display" id="eq:fieldatP">\[\begin{equation}
+\tag{2.5}
+E = \frac{1}{4 \pi \epsilon_0} \frac{qd}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}
+\end{equation}\]</span></p>
+<p>and it is in the <span class="math inline">\(-\hat{\mathbf{j}}\)</span> (or <span class="math inline">\(-\hat{\mathbf{y}}\)</span>) direction.</p>
 <div id="electric-dipole-moment" class="section level3 hasAnchor" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Electric dipole moment<a href="electric-fields.html#electric-dipole-moment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><em>Definition:</em> The electric dipole moment, <span class="math inline">\(\p\)</span>, is the product of the
+<p><em>Definition:</em> The electric dipole moment, <span class="math inline">\(\mathbf{p}\)</span>, is the product of the
 charge and the vector displacement from the negative charge to the
 positive charge in a dipole.</p>
 <div class="figurehere">
@@ -289,16 +287,24 @@ positive charge in a dipole.</p>
 <div class="figcaption">image</div>
 </div>
 </div>
-<p><span class="math display">\[\p = q \mathbf{d}\]</span></p>
+<p><span class="math display" id="eq:dipoleMoment">\[\begin{equation}
+\tag{2.6}
+\mathbf{p} = q \mathbf{d}
+\end{equation}\]</span></p>
 <p>The electric field of the dipole (Equation
-<a href="#eq:fieldatP" reference-type="eqref" reference="eq:fieldatP"><span class="math display">\[eq:fieldatP\]</span></a>) can therefore be expressed (as a vector) in
+<a href="electric-fields.html#eq:fieldatP">(2.5)</a>) can therefore be expressed (as a vector) in
 terms of the dipole moment, as follows:</p>
-<p><span class="math display">\[\label{eq:fieldatP}
-\E = \frac{1}{4 \pi \epsilon_0} \frac{\p}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}\]</span></p>
+<p><span class="math display" id="eq:fieldatPdipole">\[\begin{equation}
+\tag{2.7}
+\mathbf{E} = \frac{1}{4 \pi \epsilon_0} \frac{\mathbf{p}}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}
+\end{equation}\]</span></p>
 <p>In the limit of <span class="math inline">\(x \gg d\)</span> (in other words, when we are at a distance <span class="math inline">\(x\)</span>
 from the dipole that is much larger than the size of the dipole <span class="math inline">\(d\)</span>) the
 electric field due to the dipole can be reduced to:</p>
-<p><span class="math display">\[\E = \frac{1}{4\pi \epsilon_0} \frac{\p}{x^3}\]</span></p>
+<p><span class="math display" id="eq:EvsP">\[\begin{equation}
+\tag{2.8}
+\mathbf{E} = \frac{1}{4\pi \epsilon_0} \frac{\mathbf{p}}{x^3}
+\end{equation}\]</span></p>
 <div class="flushleft">
 
 </div>
@@ -318,11 +324,12 @@ the centre of the dipole.</p>
 </div>
 </div>
 <p>The torque about the centre of the dipole is</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:torqueDipole">\[\begin{equation}
+\tag{2.9}
 \tau = 2 F \frac{d}{2} \sin\theta = q E d \sin\theta = |p|E \sin\theta
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The direction of the torque is perpendicular to the page, so it can be
-represented in vector form as <span class="math inline">\(\boldsymbol{\tau} = \p \times \E\)</span>.</p>
+represented in vector form as <span class="math inline">\(\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}\)</span>.</p>
 <p>The torque will cause the dipole to rotate and align itself with the
 electric field as shown here:</p>
 <div class="figurehere">
@@ -334,19 +341,23 @@ electric field as shown here:</p>
 energy configuration (although it should be fairly obvious). The work
 done is the integral of the product of the torque and the angle turned
 through:</p>
-<p><span class="math display">\[\begin{aligned}
-W &amp;= \int_{\theta_0}^{\theta} |\tau| \d\theta \\
-&amp;= \int_{\theta_0}^{\theta} pE \sin\theta \d\theta \\
-&amp;= [-pE \cos\theta]_{\theta_0}^{\theta}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:workDone">\[\begin{equation}
+\tag{2.10}
+\begin{array}{rcll}
+W &amp;=&amp; \int_{\theta_0}^{\theta} |\tau| \mathrm{d}\theta \\
+&amp;=&amp; \int_{\theta_0}^{\theta} pE \sin\theta \mathrm{d}\theta \\
+&amp;=&amp; [-pE \cos\theta]_{\theta_0}^{\theta}
+\end{array}
+\end{equation}\]</span></p>
 <p>The change in potential energy is <span class="math inline">\(\Delta U = W\)</span>, hence:
-<span class="math display">\[\begin{aligned}
+<span class="math display" id="eq:changeEpot">\[\begin{equation}
+\tag{2.11}
 \Delta U = U(\theta_0) - U(\theta) = pE(\cos⁡\theta_0 - cos\theta)
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The zero of potential energy <span class="math inline">\(U(\theta_0)\)</span> can be chosen to be anywhere,
 so we can choose it to correspond to <span class="math inline">\(\theta_0 = 90^{\circ}\)</span> in which
 case <span class="math inline">\(U = -pE \cos\theta\)</span>. This energy can be expressed in vector form
-as <span class="math inline">\(U = - \p \cdot \E\)</span>.</p>
+as <span class="math inline">\(U = - \mathbf{p} \cdot \mathbf{E}\)</span>.</p>
 <p>Not surprisingly, the energy is a minimum when the dipole is aligned
 with the field at which point the torque will be zero.</p>
 </div>
@@ -397,9 +408,9 @@ from the charge because there is no source of electric field.</p>
 <p>Consider the field in and out of the volume enclosed between the two
 areas (a truncated cone). The total field in and out is the surface
 integral of the component of the field normal to the surfaces. On the
-curved faces, the normal component of <span class="math inline">\(\E\)</span> is zero. On the spherical
+curved faces, the normal component of <span class="math inline">\(\mathbf{E}\)</span> is zero. On the spherical
 faces, <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, the field is normal. If flux into the volume is
-negative, and flux out is positive <span class="math inline">\(\E\)</span> decreases with <span class="math inline">\(\frac{1}{r^2}\)</span>
+negative, and flux out is positive <span class="math inline">\(\mathbf{E}\)</span> decreases with <span class="math inline">\(\frac{1}{r^2}\)</span>
 and the area increases with <span class="math inline">\(r^2\)</span>. So the fluxes through the two faces,
 <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, are <strong>equal</strong> and <strong>opposite</strong>.</p>
 <div class="figurehere">
@@ -408,8 +419,8 @@ and the area increases with <span class="math inline">\(r^2\)</span>. So the flu
 </div>
 </div>
 <p>If a surface is tilted at an angle <span class="math inline">\(\theta\)</span> the field normal to the
-surface is <span class="math inline">\(\E_n = \E \cos\theta\)</span>. To determine the flux through the
-surface we need <span class="math inline">\(\oiint E \cos\theta \d A\)</span>, where the integral is over
+surface is <span class="math inline">\(\mathbf{E}_n = \mathbf{E} \cos\theta\)</span>. To determine the flux through the
+surface we need ∯ <span class="math inline">\(E \cos\theta \mathrm{d} A\)</span>, where the integral is over
 the surface. We can see that this flux is still the same as that through
 <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span> because all the flux that impinges on <span class="math inline">\(A_2\)</span> also
 impinges on <span class="math inline">\(A_3\)</span>.</p>
@@ -419,38 +430,44 @@ impinges on <span class="math inline">\(A_3\)</span>.</p>
 <p><img src="Figures/elecFlux3.png" style="width:80mm" alt="image" /> <span id="fig:elecFlux3" label="fig:elecFlux3"></span></p>
 </div>
 </div>
-<p>The net flux is non-zero as <span class="math inline">\(\E\)</span> is pointing outwards over the whole
-spherical surface. Because of the symmetry the magnitude of <span class="math inline">\(\E\)</span> is
-consistent across the surface and <span class="math inline">\(\E\)</span> is always perpendicular to the
+<p>The net flux is non-zero as <span class="math inline">\(\mathbf{E}\)</span> is pointing outwards over the whole
+spherical surface. Because of the symmetry the magnitude of <span class="math inline">\(\mathbf{E}\)</span> is
+consistent across the surface and <span class="math inline">\(\mathbf{E}\)</span> is always perpendicular to the
 surface.</p>
-<p>Total flux of <span class="math inline">\(\E\)</span> is <span class="math inline">\(\Phi_{\E} = E_n \times Area\)</span>. Therefore
-<span class="math display">\[\begin{aligned}
+<p>Total flux of <span class="math inline">\(\mathbf{E}\)</span> is <span class="math inline">\(\Phi_{\mathbf{E}} = E_n \times Area\)</span>. Therefore
+<span class="math display" id="eq:fluxE">\[\begin{equation}
+\tag{2.12}
 \Phi_E = \frac{q}{4\pi\epsilon_0 r^2} \times 4\pi r^2 = \frac{q}{\epsilon_0}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p><strong>This result is independent of the radius of the sphere – in fact, it
 is independent of the shape of the surface enclosing the charge.</strong></p>
 </div>
 <div id="gausss-law" class="section level2 hasAnchor" number="2.7">
 <h2><span class="header-section-number">2.7</span> Gauss’s Law<a href="electric-fields.html#gausss-law" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>(<strong>Note:</strong> In Equations <a href="electric-fields.html#eq:GaussnoQ">(2.13)</a>, <a href="electric-fields.html#eq:Gauss2">(2.14)</a> and <a href="electric-fields.html#eq:GaussLaw">(2.15)</a>, <span class="math inline">\(\iint_S\)</span> represents the closed surface integral, which is denoted elsewhere in the text as ∯.)</p>
 <p>We can calculate the electric field from any charge distribution with
 Coulomb’s Law. Gauss’ Law in the integral form which we’ll use here can
 calculate fields in some highly symmetric cases. Gauss’ Law states that
 for any <strong>closed surface</strong> <span class="math inline">\(S\)</span>:</p>
-<p><span class="math display">\[\begin{aligned}
-\oiint{E_n} \d \S = 0   \quad \text{if no charge is enclosed}
-\end{aligned}\]</span></p>
-<p>and</p>
-<p><span class="math display">\[\begin{aligned}
-\oiint{E_n} \d \S &amp;= \frac{q}{\epsilon_0} \quad  \text{if charge} \; q \; \mathrm{is enclosed}
-\end{aligned}\]</span></p>
-<p>Or in words: the magnitude of the electric field normal to the surface
+<p><span class="math display" id="eq:GaussnoQ">\[\begin{equation}
+\tag{2.13}
+\iint_S{E_n} \mathrm{d} \mathbf{S} = 0
+\end{equation}\]</span></p>
+<p><strong>if no charge is enclosed</strong> and</p>
+<p><span class="math display" id="eq:Gauss2">\[\begin{equation}
+\tag{2.14}
+\iint_S{E_n} \mathrm{d} \mathbf{S} = \frac{q}{\epsilon_0}
+\end{equation}\]</span></p>
+<p><strong>if charge <span class="math inline">\(q\)</span> is enclosed</strong>. Or in words: the magnitude of the electric field normal to the surface
 integrated over the whole of the surface is equal to the charge enclosed
 divided by <span class="math inline">\(\epsilon_0\)</span>.</p>
 <p>More generally, the integral form of Gauss’s Law is
-<span class="math display">\[\label{eq:GaussLaw}
-\oiint \E \cdot \d \S =\frac{Q}{\epsilon_0}\]</span></p>
-<p><span class="math inline">\(\d \S\)</span> is a vector normal to the surface with magnitude equal to the
-size of an element of area. <span class="math inline">\(\E \cdot \d \S\)</span>, which is a scalar product,
+<span class="math display" id="eq:GaussLaw">\[\begin{equation}
+\tag{2.15}
+\iint_S \mathbf{E} \cdot \mathrm{d} \mathbf{S} =\frac{Q}{\epsilon_0}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(\mathrm{d} \mathbf{S}\)</span> is a vector normal to the surface with magnitude equal to the
+size of an element of area. <span class="math inline">\(\mathbf{E} \cdot \mathrm{d} \mathbf{S}\)</span>, which is a scalar product,
 extracts the component of the electric field normal to the surface and
 multiplies it by the size of an element of the area. <span class="math inline">\(Q\)</span> is the total
 charge enclosed within <span class="math inline">\(S\)</span>, where <span class="math inline">\(Q = \sum_i q_i\)</span> where the sum runs
@@ -480,9 +497,11 @@ classic examples:</p>
 <p>Consider a spherical shell with charge <span class="math inline">\(Q\)</span>. By symmetry, the field is
 radial in all directions.</p>
 <p>Applying Gauss’s Law with a spherical Gaussian surface <strong>outside</strong> the
-shell, as shown in , gives: <span class="math display">\[\begin{aligned}
+shell, as shown in , gives:
+<span class="math display" id="eq:fieldShell">\[\begin{equation}
+\tag{2.16}
 E_r = \frac{Q}{4\pi\epsilon_0 r^2}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>i.e. the same as point charge or a solid sphere of charge.</p>
 <div class="figurehere">
 <div class="center">
@@ -523,11 +542,12 @@ perpendicular to the surface.</p>
 <div id="electric-potential" class="section level2 hasAnchor" number="2.8">
 <h2><span class="header-section-number">2.8</span> Electric potential<a href="electric-fields.html#electric-potential" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The electric potential due to a positive charge is positive. The
-electric potential due to a negative charge is negative The potential
+electric potential due to a negative charge is negative. The potential
 difference between two points, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, is</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:DeltaV">\[\begin{equation}
+\tag{2.17}
 \Delta V = V_b - V_a =\frac{(U_b - U_a)}{q_0}   
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The electric (or electrostatic) potential, often just called potential,
 is defined as the potential energy per unit (test) charge.</p>
 <p>Consider bringing an infinitesimal test charge (<span class="math inline">\(q_0\)</span>) from infinity
@@ -537,29 +557,37 @@ potential energy of the charge the electric potential is given by
 <p>The change in potential energy in going from point <span class="math inline">\(a\)</span> to point <span class="math inline">\(b\)</span> is
 given by the integral along the path from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> of the work done on
 the charge:</p>
-<p><span class="math display">\[\begin{aligned}
-\Delta U = - W_{ab} = -\int_a^b \F \cdot \d\l = -q_0 \int_a^b \E \cdot \d\l
-\end{aligned}\]</span></p>
-<p>We know that <span class="math display">\[\begin{aligned}
-\frac{\Delta U}{q_0} &amp;= V_b - V_a
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:DeltaU">\[\begin{equation}
+\tag{2.18}
+\Delta U = - W_{ab} = -\int_a^b \mathbf{F} \cdot \mathrm{d}\mathrm{l} = -q_0 \int_a^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}\]</span></p>
+<p>We know that
+<span class="math display" id="eq:DeltaU2">\[\begin{equation}
+\tag{2.19}
+\frac{\Delta U}{q_0} = V_b - V_a
+\end{equation}\]</span></p>
 <p>hence</p>
-<p><span class="math display">\[\begin{aligned}
-\Delta V_{ab} &amp;= -\int_a^b \E \cdot \d\l
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:DeltaVab">\[\begin{equation}
+\tag{2.20}
+\Delta V_{ab} = -\int_a^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}\]</span></p>
 <p>So the change in electrical potential is the line integral of the
 electric field along the path from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. We can choose the
 reference point of the potential to be where we like but normally select
 infinity. So</p>
-<p><span class="math display">\[\begin{aligned}
-V_b = -\int_\infty^b \E \cdot \d\l
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:Vb">\[\begin{equation}
+\tag{2.21}
+V_b = -\int_\infty^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}\]</span></p>
 <p>The potential at a distance <span class="math inline">\(r\)</span> from a point charge is</p>
-<p><span class="math display">\[\begin{aligned}
-V(r) &amp;= -\int_\infty^r \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \d r \\
-     &amp;= \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{r} - \frac{1}{\infty} \right] \\
-     &amp;= \frac{q}{4\pi\epsilon_0} \frac{1}{r}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:V-r">\[\begin{equation}
+\tag{2.22}
+\begin{array}{rcll}
+V(r) &amp;=&amp; -\int_\infty^r \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \mathrm{d} r \\
+     &amp;=&amp; \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{r} - \frac{1}{\infty} \right] \\
+     &amp;=&amp; \frac{q}{4\pi\epsilon_0} \frac{1}{r}
+\end{array}
+\end{equation}\]</span></p>
 <p><strong>Note:</strong> The dependence of the potential for a point charge on distance
 is <span class="math inline">\(\frac{1}{r}\)</span> and the force depends on <span class="math inline">\(\frac{1}{r^2}\)</span> because the
 electric field is the gradient of the potential.</p>

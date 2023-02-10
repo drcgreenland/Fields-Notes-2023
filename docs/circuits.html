@@ -23,7 +23,7 @@
 <meta name="author" content="Claire Greenland" />
 
 
-<meta name="date" content="2023-02-09" />
+<meta name="date" content="2023-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="magnetic-fields.html"/>
-<link rel="next" href="sec:Sols.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -169,15 +169,6 @@
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="circuits.html"><a href="circuits.html#summary-1"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sec:Sols.html"><a href="sec:Sols.html"><i class="fa fa-check"></i><b>5</b> Exercise solutions</a>
-<ul>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ex1Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringEx2Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#GaussLineExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#cyclotronExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#Kirchoff_ExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -259,9 +250,11 @@ difference between their terminals</p>
 the circuit. Resistance is a type of impedance. Resistance is measured
 in Ohms (<span class="math inline">\(\Omega\)</span>) where<br />
 <span class="math inline">\(1 \; \Omega = \frac{1 \; \text{V}}{1 \; \text{A}} = 1 \; \text{kg} \; \text{m}^2 \; \text{A}^{-2} \; \text{s}^{-3}\)</span><br />
-Ohmic resistors obey Ohm’s Law, which is <span class="math display">\[\begin{aligned}
+Ohmic resistors obey Ohm’s Law, which is
+<span class="math display" id="eq:Ohms">\[\begin{equation}
+\tag{4.1}
 V = IR
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>For an Ohmic resistor the resistance does not depend on current or
 potential drop. Real resistors will show some change in resistance with
 temperature.</p>
@@ -279,9 +272,10 @@ voltage, in particular, the frequency of an alternating voltage.</p>
 much charge can be stored at a given voltage. The relationship between
 voltage (<span class="math inline">\(V\)</span>), charge (<span class="math inline">\(Q\)</span>) and capacitance (<span class="math inline">\(C\)</span>) in a capacitor is
 therefore</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:Vcapacitor">\[\begin{equation}
+\tag{4.2}
 V_C = \frac{Q}{C}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 </div>
 <div id="inductors" class="section level3 hasAnchor" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> Inductors<a href="circuits.html#inductors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -293,9 +287,10 @@ current.</p>
 <p>Inductors are devices that resist a change in current because the
 changing magnetic field produced in the inductor by a changing current
 induces an EMF that opposes the change in current in the device itself:</p>
-<p><span class="math display">\[\begin{aligned}
-V_L  = -L \frac{\d I}{\d t}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:Vinductor">\[\begin{equation}
+\tag{4.3}
+V_L  = -L \frac{\mathrm{d} I}{\mathrm{d} t}
+\end{equation}\]</span></p>
 <div class="figurehere">
 <div class="center">
 <div class="float">
@@ -319,9 +314,10 @@ potential changes must be zero otherwise energy would not be conserved.
 The rule states:<br />
 “Around any closed loop the algebraic sum of the changes in potential
 must equal zero"</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:sumEpsilon">\[\begin{equation}
+\tag{4.4}
 \sum_i \epsilon_i =0
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 </div>
 <div id="the-junction-rule" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> The junction rule<a href="circuits.html#the-junction-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -330,9 +326,10 @@ Charge doesn’t collect at junctions so any flow of current in must be
 matched by current flow out of a junction. The rule states:<br />
 </p>
 <p>“The algebraic sum of currents into a junction must be equal to zero"</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:sumCurrents">\[\begin{equation}
+\tag{4.5}
 I_1 = I_2 + I_3
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <div class="figurehere">
 <div class="center">
 <div class="float">
@@ -371,21 +368,21 @@ clockwise direction.<br />
 The potential difference across the source of EMF is <span class="math inline">\(+\epsilon\)</span>.<br />
 The potential difference across the resistor is <span class="math inline">\(-IR\)</span>.<br />
 The potential difference across the capacitor is <span class="math inline">\(-\frac{Q}{C}\)</span>.<br />
-The current <span class="math inline">\(I\)</span> and charge <span class="math inline">\(Q\)</span> are related by <span class="math inline">\(I = \frac{\d Q}{\d t}\)</span>.<br />
+The current <span class="math inline">\(I\)</span> and charge <span class="math inline">\(Q\)</span> are related by <span class="math inline">\(I = \frac{\mathrm{d} Q}{\mathrm{d} t}\)</span>.<br />
 From Kirchoff’s loop rule the sum of all the voltages is
 <span class="math inline">\(0 \therefore +\epsilon - IR - \frac{Q}{C} = 0\)</span>.<br />
 Substituting for <span class="math inline">\(I\)</span> we get
-<span class="math inline">\(\epsilon - \frac{\d Q}{\d t} R - \frac{Q}{C} = 0\)</span> and the solution of
+<span class="math inline">\(\epsilon - \frac{\mathrm{d} Q}{\mathrm{d} t} R - \frac{Q}{C} = 0\)</span> and the solution of
 that equation is
 <span class="math inline">\(Q = \epsilon C \left(1 + \exp⁡\left(-\frac{t}{RC} \right) \right)\)</span> and
 the current is
-<span class="math inline">\(I = \frac{\d Q}{\d t} = \frac{\epsilon}{R} \exp\left( - \frac{t}{RC} \right)\)</span>.<br />
+<span class="math inline">\(I = \frac{\mathrm{d} Q}{\mathrm{d} t} = \frac{\epsilon}{R} \exp\left( - \frac{t}{RC} \right)\)</span>.<br />
 We can then calculate the voltage across the different components as a
 function of time.<br />
 The capacitor:
 <span class="math inline">\(V_C = \frac{Q}{C} = \epsilon \left(1 - \exp⁡ \left(- \frac{t}{RC} \right) \right)\)</span>.<br />
 The resistor:
-<span class="math inline">\(V_R = IR = \frac{\d Q}{\d t} R = \epsilon \exp⁡\left(- \frac{t}{RC} \right)\)</span>.</p>
+<span class="math inline">\(V_R = IR = \frac{\mathrm{d} Q}{\mathrm{d} t} R = \epsilon \exp⁡\left(- \frac{t}{RC} \right)\)</span>.</p>
 </div>
 </div>
 <div id="inductors-in-dc-circuits" class="section level2 hasAnchor" number="4.4">
@@ -397,11 +394,14 @@ But real circuits have resistance so there is some transient behaviour
 which is similar to the LC circuit capacitors but not quite the same.
 For the LR circuit shown below, the current and potential differences as
 a function of time are<br />
-Current:
-<span class="math inline">\(I = \frac{\epsilon}{R} \left( 1 - \exp \left⁡( - \frac{Rt}{L} \right) \right)\)</span>.<br />
-Potential difference across the inductor:
+</p>
+<p>Current:
+<span class="math inline">\(I = \frac{\epsilon}{R} \left(1 - \exp\left(-\frac{Rt}{L}\right) \right)\)</span>.<br />
+</p>
+<p>Potential difference across the inductor:
 <span class="math inline">\(V_L = \epsilon \exp⁡\left(- \frac{Rt}{L} \right)\)</span>.<br />
-Potential difference across the resistor:
+</p>
+<p>Potential difference across the resistor:
 <span class="math inline">\(V_R = \epsilon \left (1 - \exp⁡ \left( - \frac{Rt}{L} \right) \right)\)</span>.</p>
 <div class="figurehere">
 <div class="center">
@@ -431,24 +431,36 @@ next.</p>
 </div>
 <p>Using Kirchhoff’s <strong>loop rule</strong>, <span class="math inline">\(\sum_i \epsilon_i = 0\)</span>.<br />
 The expressions for <span class="math inline">\(V_C\)</span> and <span class="math inline">\(V_L\)</span> are <span class="math inline">\(V_C = \frac{Q}{C}\)</span>,
-<span class="math inline">\(V_L = -L \frac{\d I}{\d t}\)</span>...<br />
+<span class="math inline">\(V_L = -L \frac{\mathrm{d} I}{\mathrm{d} t}\)</span>...<br />
 ...and remembering that current is the rate of flow of charge. We can
 produce an equation for the charge on the capacitor and, from there, for
-the current: <span class="math display">\[\frac{\d^2 Q}{\d t^2} = - \frac{1}{LC} Q
-\label{eq:QtDiff}\]</span></p>
+the current:</p>
+<p><span class="math display" id="eq:QtDiff">\[\begin{equation}
+\tag{4.6}
+\frac{\mathrm{d}^2 Q}{\mathrm{d} t^2} = - \frac{1}{LC} Q
+\end{equation}\]</span></p>
 <p>This equation can be compared with the equation for undamped simple
 harmonic motion for a block on a spring (see Lecture 1 of Oscillations
-and Waves). By comparing with that equation, the solution to Equation
-<a href="#eq:QtDiff" reference-type="eqref" reference="eq:QtDiff"><span class="math display">\[eq:QtDiff\]</span></a> is <span class="math display">\[Q = Q_0 \cos⁡(\omega_0 t + \delta)\]</span></p>
+and Waves). By comparing with that equation, the solution to Equation <a href="#eq:Qtdiff">(<strong>??</strong>)</a> is</p>
+<p><span class="math display" id="eq:Qsolution">\[\begin{equation}
+\tag{4.7}
+Q = Q_0 \cos⁡(\omega_0 t + \delta)
+\end{equation}\]</span></p>
 <p>with the natural frequency given by <span class="math inline">\(\omega_0 = \sqrt{ \frac{1}{LC} }\)</span>.<br />
 Now add some resistance into the same circuit to create an LCR circuit.
 The resistance dissipates energy and so the energy in the circuit
 decreases with time i.e. the oscillations are damped.</p>
 <p>The equation for the charge on the capacitor is:
-<span class="math display">\[L \frac{ \d^2 Q}{\d t^2} + R \frac{\d Q}{\d t} + \frac{Q}{C} = 0\]</span></p>
+<span class="math display" id="eq:diffEqQ">\[\begin{equation}
+\tag{4.8}
+L \frac{ \mathrm{d}^2 Q}{\mathrm{d} t^2} + R \frac{\mathrm{d} Q}{\mathrm{d} t} + \frac{Q}{C} = 0
+\end{equation}\]</span></p>
 <p>Comparing with the damped oscillations of a mass on a spring (as covered
 in Oscillations and Waves) the solution is:
-<span class="math display">\[Q = Q_0 \e^{ - \frac{-t}{2\tau} } \e^{i(\omega^{&#39;} t + \delta)}\]</span></p>
+<span class="math display" id="eq:Qsol">\[\begin{equation}
+\tag{4.9}
+Q = Q_0 e^{ - \frac{-t}{2\tau} } e^{i(\omega^{&#39;} t + \delta)}
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\tau = \frac{L}{R}\)</span>,
 <span class="math inline">\(\omega^{&#39;} = \sqrt{ \omega_0^2 - \left( \frac{R}{2 L} \right)^2}\)</span> and
 the phase <span class="math inline">\(\delta\)</span> will depend on the initial conditions.</p>
@@ -456,22 +468,27 @@ the phase <span class="math inline">\(\delta\)</span> will depend on the initial
 produces forced oscillations. The steady state solution is oscillations
 with frequency <span class="math inline">\(\omega\)</span> and an amplitude that depends on the applied
 frequency.</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display" id="eq:Q0">\[\begin{equation}
+\tag{4.10}
 Q_0 = \frac{V_0}{\sqrt{ L^2 (\omega_0^2 - \omega^2)^2 + R^2 \omega^2 }}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The maximum <span class="math inline">\(Q_0\)</span> and therefore the maximum current occurs at resonance,
 when <span class="math inline">\(\omega_0 = \frac{1}{\sqrt{LC}}\)</span>, so it is possible to adjust <span class="math inline">\(C\)</span>
 or <span class="math inline">\(L\)</span> to tune to different frequencies as in a radio tuner. Ideally the
 resonance of your tuner would be sharp to reduce interference between
 radio stations with similar frequencies.</p>
 <p>The sharpness of the resonance depends on the <span class="math inline">\(Q\)</span>-factor for mechanical
-resonance: <span class="math display">\[\begin{aligned}
+resonance:
+<span class="math display" id="eq:Qfactor">\[\begin{equation}
+\tag{4.11}
 Q = \frac{2\pi}{ \left( \frac{|\Delta E|}{E} \right)_{cycle} } = \frac{\omega_0}{\Delta \omega} = \frac{\omega_0 m}{b}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>Making the usual replacements <span class="math inline">\(m \rightarrow L\)</span>, <span class="math inline">\(b \rightarrow R\)</span>, for
-electrical circuits: <span class="math display">\[\begin{aligned}
+electrical circuits:
+<span class="math display" id="eq:QvsOmega">\[\begin{equation}
+\tag{4.12}
 Q = \frac{\omega_0 L}{R}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The resonance is when <span class="math inline">\(Q\)</span> is large, so for a sharp peak (to only pick up
 one radio station at a time) you require that the circuit has a small
 resistance and a large inductance.</p>
@@ -480,30 +497,37 @@ resistance and a large inductance.</p>
 <div id="complex-electrical-impedance" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Complex electrical impedance<a href="circuits.html#complex-electrical-impedance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The equation for forced oscillations of an LCR circuit, where the
-applied voltage is represented by the real part of <span class="math inline">\(V_0 \e^{i\omega t}\)</span>,
+applied voltage is represented by the real part of <span class="math inline">\(V_0 e^{i\omega t}\)</span>,
 is</p>
-<p><span class="math display">\[L \frac{ \d^2 Q}{\d t^2} + R \frac{\d Q}{\d t} + \frac{Q}{C} = V_0 \e^{i\omega t}\]</span></p>
+<p><span class="math display" id="eq:forcedOsc">\[\begin{equation}
+\tag{4.13}
+L \frac{ \mathrm{d}^2 Q}{\mathrm{d} t^2} + R \frac{\mathrm{d} Q}{\mathrm{d} t} + \frac{Q}{C} = V_0 e^{i\omega t}
+\end{equation}\]</span></p>
 <p>and the solution for the charge on the capacitor is
-<span class="math inline">\(Q = Q_0 \e^{ i(\omega t + \delta)}\)</span>, with the phase <span class="math inline">\(\delta\)</span> in terms
+<span class="math inline">\(Q = Q_0 e^{ i(\omega t + \delta)}\)</span>, with the phase <span class="math inline">\(\delta\)</span> in terms
 of <span class="math inline">\(C\)</span>, <span class="math inline">\(L\)</span> and <span class="math inline">\(R\)</span> for the general solution of the equation given by
 <span class="math inline">\(\tan \delta = \frac{R}{ \omega L - \frac{1}{\omega C} }\)</span>.</p>
 <p>The equations produced so far have been using charge <span class="math inline">\(Q\)</span> as the
 variable, but it would be more usual to measure current, and what we are
 interested in is the phase of the current relative to the applied
 voltage. However it is easy to determine the current from the charge.
-<span class="math display">\[Q = Q_0 \e^{i(\omega t + \delta)}  \therefore I = -\frac{\d Q}{\d t} = -i \omega Q_0 \e^{i(\omega t + \delta)}\]</span></p>
+<span class="math display" id="eq:QthereforeI">\[\begin{equation}
+\tag{4.14}
+Q = Q_0 e^{i(\omega t + \delta)}  \therefore I = -\frac{\mathrm{d} Q}{\mathrm{d} t} = -i \omega Q_0 e^{i(\omega t + \delta)}
+\end{equation}\]</span></p>
 <p>where the minus sign is because we have defined the current to be
 discharging the capacitor.</p>
 <p>The amplitude of the current oscillations is <span class="math inline">\(I_0 = \omega Q_0\)</span>. Using
-the fact that <span class="math inline">\(-i = \e^{ -\frac{i\pi}{2} }\)</span> we can rewrite the
-expression for <span class="math inline">\(I\)</span> in terms of a product of <span class="math inline">\(\e^{i\omega t}\)</span> (which is
-in phase with the applied voltage) and <span class="math inline">\(\e^{i\delta^{&#39;}}\)</span> (where
+the fact that <span class="math inline">\(-i = e^{ -\frac{i\pi}{2} }\)</span> we can rewrite the
+expression for <span class="math inline">\(I\)</span> in terms of a product of <span class="math inline">\(e^{i\omega t}\)</span> (which is
+in phase with the applied voltage) and <span class="math inline">\(e^{i\delta^{&#39;}}\)</span> (where
 <span class="math inline">\(\delta^{&#39;}\)</span> is the phase difference between the voltage and the
 current).</p>
-<p><span class="math display">\[\begin{aligned}
-I = I_0 \e^{- \frac{i\pi}{2} } \e^{i\omega t} \e^{i\delta} = I_0 \e^{i\omega t} \e^{i \left( \delta - \frac{\pi}{2} \right) } = I_0 \e^{i\omega t} \e^{i \delta^{&#39;}} \\
+<p><span class="math display" id="eq:currentPhase">\[\begin{equation}
+\tag{4.15}
+I = I_0 e^{- \frac{i\pi}{2} } e^{i\omega t} e^{i\delta} = I_0 e^{i\omega t} e^{i \left( \delta - \frac{\pi}{2} \right) } = I_0 e^{i\omega t} e^{i \delta^{&#39;}} \\
 \delta^{&#39;} = \delta - \frac{\pi}{2} \therefore \tan⁡\delta^{&#39;} = -\frac{1}{\tan\delta} = \frac{ \frac{1}{\omega C} - \omega L }{R}
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>In circuits with reactive components the current is out of phase with
 the applied voltage. We can define a complex impedance <span class="math inline">\(Z\)</span> which
 includes the magnitude and phase information. This complex impedance can
@@ -511,15 +535,27 @@ be used in a complex version of Ohm’s Law, <span class="math inline">\(V = \fr
 overall impedance of a circuit can be calculated by using the
 expressions for adding resistor in series and parallel but replacing the
 resistances with the complex impedances.</p>
-<p>If we represent the voltage by the real part of <span class="math inline">\(V = V_0 \e^{i\omega t}\)</span>
-using Ohm’s Law <span class="math inline">\(V = IR\)</span> gives
-<span class="math display">\[I = \frac{V}{R} = \frac{ V_0 \e^{i\omega t} }{R} = I_0 \e^{i\omega t}\]</span></p>
-<p>As the current is in phase with <span class="math inline">\(V\)</span>,
-<span class="math display">\[Z_R = \frac{V_0 \e^{i\omega t} }{ I_0 \e^{i\omega t}} = R\]</span></p>
+<p>If we represent the voltage by the real part of <span class="math inline">\(V = V_0 e^{i\omega t}\)</span>
+using Ohm’s Law <span class="math inline">\(V = IR\)</span> gives</p>
+<p><span class="math display" id="eq:IvsT">\[\begin{equation}
+\tag{4.16}
+I = \frac{V}{R} = \frac{ V_0 e^{i\omega t} }{R} = I_0 e^{i\omega t}
+\end{equation}\]</span></p>
+<p>As the current is in phase with <span class="math inline">\(V\)</span>,</p>
+<p><span class="math display" id="eq:impedanceVI">\[\begin{equation}
+\tag{4.17}
+Z_R = \frac{V_0 e^{i\omega t} }{ I_0 e^{i\omega t}} = R
+\end{equation}\]</span></p>
 <p>For a capacitor
-<span class="math display">\[V = \frac{Q}{C} \therefore I = \frac{\d Q}{\d t} = C \frac{\d V}{\d t} = C V_0 i \omega \e^{i\omega t}\]</span></p>
+<span class="math display" id="eq:foraCapacitor">\[\begin{equation}
+\tag{4.18}
+V = \frac{Q}{C} \therefore I = \frac{\mathrm{d} Q}{\mathrm{d} t} = C \frac{\mathrm{d} V}{\mathrm{d} t} = C V_0 i \omega e^{i\omega t}
+\end{equation}\]</span></p>
 <p>Defining impedance as voltage divided by current:
-<span class="math display">\[Z_C = \frac{V}{I} = \frac{V_0 \e^{i\omega t} }{C V_0 \e^{i\omega t}} = \frac{1}{i\omega C}\]</span></p>
+<span class="math display" id="eq:ZVI">\[\begin{equation}
+\tag{4.19}
+Z_C = \frac{V}{I} = \frac{V_0 e^{i\omega t} }{C V_0 e^{i\omega t}} = \frac{1}{i\omega C}
+\end{equation}\]</span></p>
 <p>A similar argument leads to <span class="math inline">\(Z_L = i\omega L\)</span>.</p>
 </div>
 <div id="combining-complex-impedances" class="section level2 hasAnchor" number="4.7">
@@ -533,28 +569,41 @@ using Ohm’s Law <span class="math inline">\(V = IR\)</span> gives
 </div>
 </div>
 <p>Impedances can be combined using the addition rules for resistors.<br />
-Series: <span class="math display">\[\begin{aligned}
+Series:
+<span class="math display" id="eq:ImpedanceSeries">\[\begin{equation}
+\tag{4.20}
 Z = Z_1 + Z_2 + Z_3 + ...
-\end{aligned}\]</span></p>
-<p>Parallel: <span class="math display">\[\begin{aligned}
+\end{equation}\]</span></p>
+<p>Parallel:
+<span class="math display" id="eq:ImpParallel">\[\begin{equation}
+\tag{4.21}
 \frac{1}{Z} = \frac{1}{Z_1} + \frac{1}{Z_2} + \frac{1}{Z_3} + ...
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>For example, for the series circuit shown in , since all the impedances
 are in series we just sum them to get the overall impedance:
-<span class="math display">\[\begin{aligned}
+<span class="math display" id="eq:ImpOverall">\[\begin{equation}
+\tag{4.22}
 Z_{tot} = R + Z_C + Z_L = R + \frac{1}{i\omega C} + i\omega L
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>To get the phase of the current with respect to the voltage, we write
-the impedance for the circuit in in the form <span class="math inline">\(|Z| \e^{i\phi}\)</span>.</p>
-<p>We can rewrite <span class="math inline">\(Z_{tot}\)</span> as a real and imaginary term: <span class="math display">\[\begin{aligned}
+the impedance for the circuit in in the form <span class="math inline">\(|Z| e^{i\phi}\)</span>.</p>
+<p>We can rewrite <span class="math inline">\(Z_{tot}\)</span> as a real and imaginary term:</p>
+<p><span class="math display" id="eq:ZReal-Im">\[\begin{equation}
+\tag{4.23}
 Z_{tot} = R + i\left( - \frac{1}{\omega C} + \omega L \right)
-\end{aligned}\]</span></p>
+\end{equation}\]</span></p>
 <p>The magnitude of the impedance is therefore
-<span class="math display">\[\sqrt{ \Re(Z)^2 + \Im(Z)^2 } = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2 }\]</span></p>
+<span class="math display" id="eq:Zmag">\[\begin{equation}
+\tag{4.24}
+\sqrt{ \Re(Z)^2 + \Im(Z)^2 } = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2 }
+\end{equation}\]</span></p>
 <p>and the phase is
-<span class="math inline">\(\phi = \tan^{-1}⁡ \frac{\Im(Z)}{ \Re(Z)}= tan^{-1}⁡\left( \frac{ \omega L - \frac{1}{\omega C} }{R} \right)\)</span></p>
+<span class="math inline">\(\phi = \tan^{-1}⁡ \frac{\Im(Z)}{ \Re(Z)}= \tan^{-1}⁡\left( \frac{ \omega L - \frac{1}{\omega C} }{R} \right)\)</span></p>
 <p>So the complex expression for the impedance is
-<span class="math display">\[Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( i tan^{-1}⁡ \left( \frac{\omega L - \frac{1}{\omega C} }{R} \right)\right)\]</span></p>
+<span class="math display" id="eq:complexImpedance">\[\begin{equation}
+\tag{4.25}
+Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( i \tan^{-1}⁡ \left( \frac{\omega L - \frac{1}{\omega C} }{R} \right)\right)
+\end{equation}\]</span></p>
 <p>We can represent the impedance on an Argand diagram as shown below.</p>
 <div class="figurehere">
 <div class="center">
@@ -575,10 +624,16 @@ the maximum power is transferred into the circuit.</p>
 <div id="energy-in-lcr-circuits" class="section level2 hasAnchor" number="4.8">
 <h2><span class="header-section-number">4.8</span> Energy in LCR circuits<a href="circuits.html#energy-in-lcr-circuits" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Rewriting the equation for the LCR circuit gives
-<span class="math display">\[V_0 \e^{i\omega t} = L \frac{\d I}{\d t} + RI + \frac{Q}{C}\]</span></p>
+<span class="math display" id="eq:LCRrewrite">\[\begin{equation}
+\tag{4.26}
+V_0 e^{i\omega t} = L \frac{\mathrm{d} I}{\mathrm{d} t} + RI + \frac{Q}{C}
+\end{equation}\]</span></p>
 <p>The power supplied to the circuit is <span class="math inline">\(IV\)</span>. If the whole equation is
 multiplied by <span class="math inline">\(I\)</span>,
-<span class="math display">\[I V_0 \e^{i\omega t} = IL \frac{\d I}{\d t} + RI^2 + \frac{IQ}{C}\]</span></p>
+<span class="math display" id="eq:multiplyByI">\[\begin{equation}
+\tag{4.27}
+I V_0 e^{i\omega t} = IL \frac{\mathrm{d} I}{\mathrm{d} t} + RI^2 + \frac{IQ}{C}
+\end{equation}\]</span></p>
 <p>The term on the left-hand side is the power supplied to the circuit. The
 other terms must also be an energy rate. The middle term on the
 right-hand side should be familiar and is the rate at which power is
@@ -586,18 +641,22 @@ dissipated in the resistor. The other two terms describe the rate at
 which power is stored or released from the inductor and the capacitor.</p>
 <div id="energy-stored-in-an-inductor" class="section level3 hasAnchor" number="4.8.1">
 <h3><span class="header-section-number">4.8.1</span> Energy stored in an inductor<a href="circuits.html#energy-stored-in-an-inductor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span class="math inline">\(IL \frac{\d I}{\d t}\)</span> is the rate at which energy is stored in the
+<p><span class="math inline">\(IL \frac{\mathrm{d} I}{\mathrm{d} t}\)</span> is the rate at which energy is stored in the
 magnetic field. The energy stored in the field at any point, <span class="math inline">\(U_B\)</span>, can
 be found by integrating.
-<span class="math display">\[\frac{\d U_B}{\d t} = IL \frac{\d I}{\d t} \therefore U_B = \frac{I^2 L}{2}\]</span></p>
+<span class="math display" id="eq:dU-dT">\[\begin{equation}
+\tag{4.28}
+\frac{\mathrm{d} U_B}{\mathrm{d} t} = IL \frac{\mathrm{d} I}{\mathrm{d} t} \therefore U_B = \frac{I^2 L}{2}
+\end{equation}\]</span></p>
 </div>
 <div id="energy-stored-in-a-capacitor" class="section level3 hasAnchor" number="4.8.2">
 <h3><span class="header-section-number">4.8.2</span> Energy stored in a capacitor<a href="circuits.html#energy-stored-in-a-capacitor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math inline">\(\frac{IQ}{C}\)</span> is the rate at which energy is stored in the electric
 field. The energy stored, <span class="math inline">\(U_C\)</span>, can be found by integrating.
-<span class="math display">\[\begin{aligned}
-\frac{\d U_C}{\d t} = \frac{\d Q}{\d t} \frac{Q}{C} \therefore U_C = \frac{Q^2}{2C} = \frac{CV^2}{2}
-\end{aligned}\]</span></p>
+<span class="math display" id="eq:energyCap">\[\begin{equation}
+\tag{4.29}
+\frac{\mathrm{d} U_C}{\mathrm{d} t} = \frac{\mathrm{d} Q}{\mathrm{d} t} \frac{Q}{C} \therefore U_C = \frac{Q^2}{2C} = \frac{CV^2}{2}
+\end{equation}\]</span></p>
 </div>
 </div>
 <div id="summary-1" class="section level2 hasAnchor" number="4.9">
@@ -611,41 +670,31 @@ field. The energy stored, <span class="math inline">\(U_C\)</span>, can be found
 <td align="left">Capacitors</td>
 <td align="center"><span class="math inline">\(V_C = \frac{Q}{C}\)</span></td>
 <td align="left">Inductors</td>
-<td align="center"><span class="math inline">\(V_L = -L \frac{\d I}{\d t}\)</span></td>
+<td align="right"><span class="math inline">\(V_L = -L \frac{\mathrm{d} I}{\mathrm{d} t}\)</span></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="center"><span class="math inline">\(U_C = \frac{1}{2} \frac{Q^2}{C}\)</span></td>
 <td align="left"></td>
-<td align="center"><span class="math inline">\(U_L = \frac{1}{2} LI^2\)</span></td>
+<td align="right"><span class="math inline">\(U_L = \frac{1}{2} LI^2\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Complex impedance</td>
 <td align="center"><span class="math inline">\(Z_C = \frac{1}{i \omega C}\)</span></td>
 <td align="left">Kirchoff’s Laws</td>
-<td align="center"><span class="math inline">\(\sum_i \epsilon_i = 0\)</span> around a loop</td>
+<td align="right"><span class="math inline">\(\sum_i \epsilon_i = 0\)</span> around a loop</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
 <td align="center"><span class="math inline">\(Z_L = i \omega L\)</span></td>
 <td align="left"></td>
-<td align="center"><span class="math inline">\(\sum_i I_i = 0\)</span> at a junction</td>
+<td align="right"><span class="math inline">\(\sum_i I_i = 0\)</span> at a junction</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>At the end of this section you should be able to:</p>
-<ul>
-<li><p>Analyse DC circuits containing <strong>resistance</strong>, <strong>capacitance</strong> and
-<strong>inductance</strong> and with more than one source of EMF to determine the
-current flowing at any point.</p></li>
-<li><p>Analyse AC circuits including the same types of components using
-complex notation for impedance to determine the current and its
-phase relation to the applied voltage.</p></li>
-<li><p>Determine the parameters associated with oscillations in LC and LCR
-circuits, including the energy stored.</p></li>
-</ul>
+
 </div>
 </div>
             </section>
@@ -653,8 +702,8 @@ circuits, including the energy stored.</p></li>
           </div>
         </div>
       </div>
-<a href="magnetic-fields.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sec:Sols.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="magnetic-fields.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -23,7 +23,7 @@
 <meta name="author" content="Claire Greenland" />
 
 
-<meta name="date" content="2023-02-09" />
+<meta name="date" content="2023-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -169,15 +169,6 @@
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="circuits.html"><a href="circuits.html#summary-1"><i class="fa fa-check"></i><b>4.9</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="sec:Sols.html"><a href="sec:Sols.html"><i class="fa fa-check"></i><b>5</b> Exercise solutions</a>
-<ul>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ex1Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#ringEx2Sol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#GaussLineExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#cyclotronExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-<li class="chapter" data-level="" data-path="sec:Sols.html"><a href="sec:Sols.html#Kirchoff_ExSol"><i class="fa fa-check"></i>Exercise solution</a></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -201,7 +192,7 @@
 <div id="header">
 <h1 class="title">Fields</h1>
 <p class="author"><em>Claire Greenland</em></p>
-<p class="date"><em>2023-02-09</em></p>
+<p class="date"><em>2023-02-10</em></p>
 </div>
 <div id="fields-basics" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Fields – Basics<a href="fields-basics.html#fields-basics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -304,22 +295,23 @@ each point.</p>
 <p><em>Recommended reading:</em> Tipler &amp; Mosca 23-3.</p>
 <p>For the scalar temperature field <span class="math inline">\(T(x,y,z)\)</span> the vector describing the
 direction and the magnitude of the maximum temperature gradient is:</p>
-<p><span class="math display">\[\begin{aligned}
-\text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\i} + \frac{\partial T}{\partial y} \hat{\j} + \frac{\partial T}{\partial y} \hat{\k}
-\end{aligned}\]</span></p>
-<p>The heat flow is a vector given by <span class="math inline">\(\Q = -k \nabla T\)</span>; the minus sign is
+<p><span class="math display" id="eq:tempGrad">\[\begin{equation}
+\tag{1.1}
+\text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\mathbf{i}} + \frac{\partial T}{\partial y} \hat{\mathbf{j}} + \frac{\partial T}{\partial y} \hat{\mathbf{k}}
+\end{equation}\]</span></p>
+<p>The heat flow is a vector given by <span class="math inline">\(\mathbf{Q} = -k \nabla T\)</span>; the minus sign is
 because heat flows from high temperature to low temperature.</p>
 <p>In general, for a scalar potential
-<span class="math inline">\(-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\i} + \frac{\partial \phi}{\partial y} \hat{\j} + \frac{\partial \phi}{\partial y} \hat{\k}\)</span>
+<span class="math inline">\(-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\mathbf{i}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{j}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{k}}\)</span>
 describes the magnitude and direction of the physical effects of the
 potential, with an appropriate constant if needed. In the case of the
 electric field if the electric potential is <span class="math inline">\(V\)</span> then the vector field
-<span class="math inline">\(\E = -\nabla V\)</span>.</p>
+<span class="math inline">\(\mathbf{E} = -\nabla V\)</span>.</p>
 <p>As an example, the gravitational field can be obtained from the
 gravitational potential. The scalar gravitational potential energy is
 given by <span class="math inline">\(U = mgz\)</span> near the Earth’s surface, where <span class="math inline">\(z\)</span> is the height.
 The gravitational potential is <span class="math inline">\(U/m = gz\)</span>. The gravitational field is
-<span class="math inline">\(-\nabla(gz)=-g \hat{\k}\)</span>.</p>
+<span class="math inline">\(-\nabla(gz)=-g \hat{\mathbf{k}}\)</span>.</p>
 <div class="flushleft">
 
 </div>
@@ -328,9 +320,9 @@ The gravitational potential is <span class="math inline">\(U/m = gz\)</span>. Th
 <p>The vector operator <span class="math inline">\(\nabla\)</span> behaves as a vector. We have looked at grad
 <span class="math inline">\(\nabla\phi\)</span> where <span class="math inline">\(\phi\)</span> is a scalar field. In Maxwell’s equations,
 which you cover next year, you will also meet <span class="math inline">\(\nabla\)</span> operating on the
-electric field <span class="math inline">\(\E\)</span>:</p>
-<p><span class="math inline">\(\nabla \cdot \E\)</span> (div or divergence)</p>
-<p><span class="math inline">\(\nabla \times \E\)</span> (curl or rotation)</p>
+electric field <span class="math inline">\(\mathbf{E}\)</span>:</p>
+<p><span class="math inline">\(\nabla \cdot \mathbf{E}\)</span> (div or divergence)</p>
+<p><span class="math inline">\(\nabla \times \mathbf{E}\)</span> (curl or rotation)</p>
 <p>Maxwell’s equations are one of the great achievements of 19th century
 Physics. They link the phenomena of electricity and magnetism and can be
 used to derive an expression for the speed of light. Einstein said that
@@ -339,12 +331,22 @@ equations in their differential form are shown below and we will meet
 most of the concepts in this course and integral versions of some of the
 laws. You can read more about Maxwell’s Equations in Chapter 30 of
 Tipler and Mosca.</p>
-<p><span class="math display">\[\begin{aligned}
-\nabla \cdot \E &amp;= \frac{\rho}{\epsilon_0} \\
-\nabla \times \E &amp;= - \frac{\partial \B}{\partial t} \\
-\nabla \cdot \B &amp;= 0 \\
-\nabla \times \B &amp;= \frac{\j}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \E}{\partial t}
-\end{aligned}\]</span></p>
+<p><span class="math display" id="eq:maxwell1">\[\begin{equation}
+\tag{1.2}
+\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:maxwell2">\[\begin{equation}
+\tag{1.3}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:maxwell3">\[\begin{equation}
+\tag{1.4}
+\nabla \cdot \mathbf{B} = 0
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:maxwell4">\[\begin{equation}
+\tag{1.5}
+\nabla \times \mathbf{B} = \frac{\mathbf{j}}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \mathbf{E}}{\partial t}
+\end{equation}\]</span></p>
 <p>Source: <a href="http://www.clerkmaxwellfoundation.org/html/about_maxwell.html" class="uri">http://www.clerkmaxwellfoundation.org/html/about_maxwell.html</a>
 ; <a href="https://maxwells-equations.com/" class="uri">https://maxwells-equations.com/</a></p>
 </div>
@@ -352,11 +354,11 @@ Tipler and Mosca.</p>
 <div id="representing-the-electric-field" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Representing the electric field<a href="fields-basics.html#representing-the-electric-field" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>Recommended reading:</em> Tipler &amp; Mosca 21-5.</p>
-<p>The vector electric field, <span class="math inline">\(\E\)</span>, at a particular point in space,
+<p>The vector electric field, <span class="math inline">\(\mathbf{E}\)</span>, at a particular point in space,
 associated with a collection of charges, is defined in terms of the
-force, <span class="math inline">\(\F\)</span>, exerted on a positive test charge, <span class="math inline">\(q_0\)</span>, at that point
+force, <span class="math inline">\(\mathbf{F}\)</span>, exerted on a positive test charge, <span class="math inline">\(q_0\)</span>, at that point
 <span class="math inline">\(E = F/q_0\)</span>.</p>
-<p><span class="math inline">\(\E\)</span> has units of Vm<span class="math inline">\(^{-1}\)</span> or NC<span class="math inline">\(^{-1}\)</span>. The electric field is normally
+<p><span class="math inline">\(\mathbf{E}\)</span> has units of Vm<span class="math inline">\(^{-1}\)</span> or NC<span class="math inline">\(^{-1}\)</span>. The electric field is normally
 represented by field lines that indicate what a positive test charge
 will do. The arrows indicate the direction of the field and the density
 of lines indicates the strength of the field at a point. The diagram

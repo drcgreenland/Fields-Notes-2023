@@ -64,6 +64,209 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\documentclass[11pt]{article}
+ [pdfborder={0 0 0}]
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage[colorlinks]{hyperref}
+\usepackage[svgnames]{xcolor}
+\usepackage{bm,graphicx,enumitem,mathtools}
+\usepackage{quantum}
+\usepackage{empheq}
+\usepackage{framed,float,pdfcomment,tcolorbox}
+
+%\usepackage{ms}
+
+%\usepackage[utf8]{inputenc}
+
+\usepackage[margin=20pt,font=footnotesize,labelfont=bf,labelsep=endash]{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+\usepackage[defaultsans]{lato}
+\usepackage{esint}
+\usepackage{booktabs} 
+
+\usepackage[titles]{tocloft}
+%\renewcommand*{\cftsecdotsep}{4.5}  % use dots in the section entries
+\renewcommand*{\cftsecnumwidth}{2em} % increase space for Roman numerals
+\renewcommand*{\cftsubsubsecindent}{2em} % reduce indent of subsubsection titles 
+\setlength\cftparskip{4pt}
+
+\renewcommand\thesection{\arabic{section}}
+
+\renewcommand\contentsname{\sffamily\Large Table of Contents\medskip\hrule\medskip}
+
+\usepackage[nodayofweek]{datetime}
+
+\makeatletter
+\renewcommand\section{%
+\@startsection{section}{1}{\z@}%
+              {-2ex \@plus -1ex \@minus -.2ex}%
+              {1ex \@plus .2ex}%
+              {\sffamily\bfseries\large\noindent Section~}}
+\renewcommand\subsection{%
+\@startsection{subsection}{2}{\z@}%
+              {-3.25ex\@plus -1ex \@minus -.2ex}%
+              {1ex \@plus .2ex}%
+              {\sffamily\bfseries}}
+\renewcommand\subsubsection{%
+\@startsection{subsubsection}{2}{\z@}%
+              {-3.25ex\@plus -1ex \@minus -.2ex}%
+              {1ex \@plus .2ex}%
+              {\sffamily\bfseries}}
+\renewcommand\paragraph{%
+\@startsection{paragraph}{4}{\z@}%
+              {-1.5ex\@plus -1ex \@minus -.2ex}%
+              {0.3ex \@plus .2ex}%
+              {\sffamily\bfseries}}
+
+\renewcommand\tableofcontents{%
+    \subsection*{\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \@starttoc{toc}%
+}
+\makeatother
+
+
+\makeatletter
+\newenvironment{tablehere}
+{\def\@captype{table}}{}
+\newenvironment{figurehere}
+{\def\@captype{figure}}{}
+\makeatother
+
+
+ \definecolor{shadecolor}{named}{AliceBlue}
+
+\newtcolorbox{mybox}{colback=gray!25,
+boxrule=0pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,leftrule=2pt, rightrule=2pt}
+
+\newcommand{\Think}[1]{
+\begin{mybox}
+\includegraphics[width=0.8cm]{Images/Think.png} \enskip{}
+ \textbf{Think about it.}\\#1
+\end{mybox}
+}
+
+
+ \newcounter{appliedmechanics}
+\def\theappliedmechanics{\arabic{appliedmechanics}}
+\newenvironment{appliedmechanics}[2][]{\begin{small}\begin{shaded}\refstepcounter{appliedmechanics} \par\medskip\noindent%
+   \textbf{Applied Mechanics~\theappliedmechanics #1: #2
+   \vspace{0.1cm} \hrule \vspace{0.1cm}}
+   \rmfamily}{\medskip \end{shaded}\end{small}}
+   
+ 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[CE,CO]{\small\textsf{Core Physics II: Oscillations, Waves \& Fields}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{}
+\fancyfoot[CO,CE]{}
+\fancyfoot[R]{\hyperlink{page.1}{\small{\color{SteelBlue}Table of Contents}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\setlist[description]{%
+  font={\itshape}, % set the label font
+%  font={\bfseries\sffamily\color{red}}, % if colour is needed
+}
+
+\newcommand{\highlight}[1]{\textsf{\textbf{\small #1}}}
+
+\newcommand{\mechanics}[1]{{\color{SteelBlue}#1}}
+
+\newcommand{\exref}[2][Exercise~]{#1\ref{#2}}
+\newcommand{\secref}[2][Section~]{#1\ref{#2}}
+\newcommand{\figref}[2][\figurename~]{#1\ref{#2}}
+
+\newlength\mytemplen
+\newsavebox\mytempbox
+
+\makeatletter
+\newcommand\mybluebox{%
+    \@ifnextchar[%]
+       {\@mybluebox}%
+       {\@mybluebox[0pt]}}
+
+\def\@mybluebox[#1]{%
+    \@ifnextchar[%]
+       {\@@mybluebox[#1]}%
+       {\@@mybluebox[#1][0pt]}}
+
+\def\@@mybluebox[#1][#2]#3{
+    \sbox\mytempbox{#3}%
+    \mytemplen\ht\mytempbox
+    \advance\mytemplen #1\relax
+    \ht\mytempbox\mytemplen
+    \mytemplen\dp\mytempbox
+    \advance\mytemplen #2\relax
+    \dp\mytempbox\mytemplen
+    \colorbox{Linen}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+
+\makeatother
+
+\newcommand{\poor}{\color{Red}poor}
+\newcommand{\ok}{\color{Orange}ok}
+\newcommand{\good}{\color{OliveGreen}good}
+
+% For vectors
+\renewcommand{\a}{\mathbf{a}}
+\renewcommand{\b}{\mathbf{b}}
+\renewcommand{\c}{\mathbf{c}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\z}{\mathbf{z}}
+\renewcommand{\r}{\mathbf{r}}
+\renewcommand{\u}{\mathbf{u}}
+\renewcommand{\v}{\mathbf{v}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\p}{\mathbf{p}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\s}{\mathbf{s}}
+
+\newcommand{\n}{\mathbf{n}}
+
+% For differentials
+\renewcommand{\d}{\mathrm{d}}
+% For exponentials? 
+\newcommand{\e}{\mathrm{e}}
+
+% For vectors
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\D}{\mathbf{D}}
+\newcommand{\E}{\mathbf{E}}
+\newcommand{\J}{\mathbf{J}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\M}{\mathbf{M}}
+\renewcommand{\H}{\mathbf{H}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\R}{\mathbf{R}}
+\renewcommand{\l}{\mathbf{l}}
+\renewcommand{\S}{\mathbf{S}}
+\renewcommand{\L}{\mathbf{L}}
+\newcommand{\Q}{\mathbf{Q}}
+
+
+% For unit vectors
+\renewcommand{\i}{\mathbf{i}}
+\renewcommand{\j}{\mathbf{j}}
+\renewcommand{\k}{\mathbf{k}}
+
+\DeclareMathOperator{\sinc}{sinc}
+
+\numberwithin{equation}{section}
+
+\setcounter{tocdepth}{2}
+
+\DeclareUnicodeCharacter{2061}{}
+\DeclareUnicodeCharacter{2003}{}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -80,7 +283,7 @@
 
 \title{Fields}
 \author{Claire Greenland}
-\date{2023-02-09}
+\date{2023-02-10}
 
 \begin{document}
 \maketitle
@@ -89,6 +292,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+At the end of this section
+
 \hypertarget{fields-basics}{%
 \chapter{Fields -- Basics}\label{fields-basics}}
 
@@ -211,25 +416,26 @@ each point.
 For the scalar temperature field \(T(x,y,z)\) the vector describing the
 direction and the magnitude of the maximum temperature gradient is:
 
-\[\begin{aligned}
- \text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\i} + \frac{\partial T}{\partial y} \hat{\j} + \frac{\partial T}{\partial y} \hat{\k}
-\end{aligned}\]
+\begin{equation}
+\label{eq:tempGrad}
+ \text{Grad} \; T = \nabla T = \frac{\partial T} {\partial x} \hat{\mathbf{i}} + \frac{\partial T}{\partial y} \hat{\mathbf{j}} + \frac{\partial T}{\partial y} \hat{\mathbf{k}}
+\end{equation}
 
-The heat flow is a vector given by \(\Q = -k \nabla T\); the minus sign is
+The heat flow is a vector given by \(\mathbf{Q} = -k \nabla T\); the minus sign is
 because heat flows from high temperature to low temperature.
 
 In general, for a scalar potential
-\(-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\i} + \frac{\partial \phi}{\partial y} \hat{\j} + \frac{\partial \phi}{\partial y} \hat{\k}\)
+\(-\nabla \phi = \frac{\partial \phi} {\partial x} \hat{\mathbf{i}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{j}} + \frac{\partial \phi}{\partial y} \hat{\mathbf{k}}\)
 describes the magnitude and direction of the physical effects of the
 potential, with an appropriate constant if needed. In the case of the
 electric field if the electric potential is \(V\) then the vector field
-\(\E = -\nabla V\).
+\(\mathbf{E} = -\nabla V\).
 
 As an example, the gravitational field can be obtained from the
 gravitational potential. The scalar gravitational potential energy is
 given by \(U = mgz\) near the Earth's surface, where \(z\) is the height.
 The gravitational potential is \(U/m = gz\). The gravitational field is
-\(-\nabla(gz)=-g \hat{\k}\).
+\(-\nabla(gz)=-g \hat{\mathbf{k}}\).
 
 \hypertarget{other-operations-on-vectors}{%
 \subsection{Other operations on vectors}\label{other-operations-on-vectors}}
@@ -237,11 +443,11 @@ The gravitational potential is \(U/m = gz\). The gravitational field is
 The vector operator \(\nabla\) behaves as a vector. We have looked at grad
 \(\nabla\phi\) where \(\phi\) is a scalar field. In Maxwell's equations,
 which you cover next year, you will also meet \(\nabla\) operating on the
-electric field \(\E\):
+electric field \(\mathbf{E}\):
 
-\(\nabla \cdot \E\) (div or divergence)
+\(\nabla \cdot \mathbf{E}\) (div or divergence)
 
-\(\nabla \times \E\) (curl or rotation)
+\(\nabla \times \mathbf{E}\) (curl or rotation)
 
 Maxwell's equations are one of the great achievements of 19th century
 Physics. They link the phenomena of electricity and magnetism and can be
@@ -252,12 +458,25 @@ most of the concepts in this course and integral versions of some of the
 laws. You can read more about Maxwell's Equations in Chapter 30 of
 Tipler and Mosca.
 
-\[\begin{aligned}
-\nabla \cdot \E &= \frac{\rho}{\epsilon_0} \\ 
-\nabla \times \E &= - \frac{\partial \B}{\partial t} \\
-\nabla \cdot \B &= 0 \\
-\nabla \times \B &= \frac{\j}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \E}{\partial t}
-\end{aligned}\]
+\begin{equation}
+\label{eq:maxwell1}
+\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+
+\begin{equation}
+\label{eq:maxwell2}
+\nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t} 
+\end{equation}
+
+\begin{equation}
+\label{eq:maxwell3}
+\nabla \cdot \mathbf{B} = 0
+\end{equation}
+
+\begin{equation}
+\label{eq:maxwell4}
+\nabla \times \mathbf{B} = \frac{\mathbf{j}}{c^2 \epsilon_0} + \frac{1}{c^2} \frac{\partial \mathbf{E}}{\partial t}
+\end{equation}
 
 Source: \url{http://www.clerkmaxwellfoundation.org/html/about_maxwell.html}
 ; \url{https://maxwells-equations.com/}
@@ -267,12 +486,12 @@ Source: \url{http://www.clerkmaxwellfoundation.org/html/about_maxwell.html}
 
 \emph{Recommended reading:} Tipler \& Mosca 21-5.
 
-The vector electric field, \(\E\), at a particular point in space,
+The vector electric field, \(\mathbf{E}\), at a particular point in space,
 associated with a collection of charges, is defined in terms of the
-force, \(\F\), exerted on a positive test charge, \(q_0\), at that point
+force, \(\mathbf{F}\), exerted on a positive test charge, \(q_0\), at that point
 \(E = F/q_0\).
 
-\(\E\) has units of Vm\(^{-1}\) or NC\(^{-1}\). The electric field is normally
+\(\mathbf{E}\) has units of Vm\(^{-1}\) or NC\(^{-1}\). The electric field is normally
 represented by field lines that indicate what a positive test charge
 will do. The arrows indicate the direction of the field and the density
 of lines indicates the strength of the field at a point. The diagram
@@ -345,8 +564,10 @@ charges.
 
 The force on \(q_2\) due to \(q_1\) is given by:
 
-\[\label{eq:coulomb}
-\F_{12}= \frac{1}{4\pi \epsilon_0} \frac{q_1 q_2}{r_{12}^2} \hat{\r}_{12}\]
+\begin{equation}
+\label{eq:coulombs}
+\mathbf{F}_{12}= \frac{1}{4\pi \epsilon_0} \frac{q_1 q_2}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}
 
 The force on \(q_2\) is directed \textbf{away from} \(q_1\) if \(q_1 q_2\) is
 positive (i.e.~when the charges have the same sign - like charges
@@ -356,19 +577,21 @@ force on \(q_2\) is directed \textbf{towards} \(q_1\) (unlike charges attract).
 \hypertarget{the-electric-field}{%
 \section{The electric field}\label{the-electric-field}}
 
-The electric field (\(\E\)) is defined in terms of the force on a test
+The electric field (\(\mathbf{E}\)) is defined in terms of the force on a test
 charge \(q_0\). The force on \(q_0\) due to another charge \(q\) is
 
-\[\begin{aligned}
-\F = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\r}_{12}
-\end{aligned}\]
+\begin{equation}
+\label{eq:forceQ0}
+\mathbf{F} = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}
 
 The electric field is the force divided by the magnitude of the test
 charge -- the field is independent of the charge used to test it.
 
-\[\begin{aligned}
-\E = \frac{\F}{q_0} = \frac{1}{4\pi \epsilon_0} \frac{q q_0}{r_{12}^2} \hat{\r}_{12}
-\end{aligned}\]
+\begin{equation}
+\label{eq:fieldQ}
+\mathbf{E} = \frac{\mathbf{F}}{q_0} = \frac{1}{4\pi \epsilon_0} \frac{q}{r_{12}^2} \hat{\mathbf{r}}_{12}
+\end{equation}
 
 \hypertarget{principle-of-superposition}{%
 \section{Principle of superposition}\label{principle-of-superposition}}
@@ -383,17 +606,18 @@ Have a look at the diagram below:
 \caption{image}
 \end{figure}
 
-The principle of superposition says that the \textbf{resultant force} \(\F_R\)
+The principle of superposition says that the \textbf{resultant force} \(\mathbf{F}_R\)
 on charge 1 due to charge 2 and charge 3 is simply the vector sum of the
 forces due to the individual charges.
 
 The principle of superposition can be used to calculate the electric
-field \(\E\) for a group of charges by summing the fields due to all
+field \(\mathbf{E}\) for a group of charges by summing the fields due to all
 charges present.
 
-\[\begin{aligned}
-\E = \E_1 + \E_2 + \E_3 + ... = \sum_i \E_i
-\end{aligned}\]
+\begin{equation}
+\label{eq:superposition}
+\mathbf{E} = \mathbf{E}_1 + \mathbf{E}_2 + \mathbf{E}_3 + ... = \sum_i \mathbf{E}_i 
+\end{equation}
 
 \hypertarget{electric-dipole-field}{%
 \section{Electric dipole field}\label{electric-dipole-field}}
@@ -421,15 +645,17 @@ Consider the diagram of the dipole below:
 
 The magnitude of the field at point \(P\) is given by
 
-\[\label{eq:fieldatP}
-E = \frac{1}{4 \pi \epsilon_0} \frac{qd}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}\]
+\begin{equation}
+\label{eq:fieldatP}
+E = \frac{1}{4 \pi \epsilon_0} \frac{qd}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}
+\end{equation}
 
-and it is in the \(-\hat{\j}\) (or \(-\hat{\y}\)) direction.
+and it is in the \(-\hat{\mathbf{j}}\) (or \(-\hat{\mathbf{y}}\)) direction.
 
 \hypertarget{electric-dipole-moment}{%
 \subsection{Electric dipole moment}\label{electric-dipole-moment}}
 
-\emph{Definition:} The electric dipole moment, \(\p\), is the product of the
+\emph{Definition:} The electric dipole moment, \(\mathbf{p}\), is the product of the
 charge and the vector displacement from the negative charge to the
 positive charge in a dipole.
 
@@ -439,20 +665,28 @@ positive charge in a dipole.
 \caption{image}
 \end{figure}
 
-\[\p = q \mathbf{d}\]
+\begin{equation}
+\label{eq:dipoleMoment}
+\mathbf{p} = q \mathbf{d}
+\end{equation}
 
 The electric field of the dipole (Equation
-\protect\hyperlink{eq:fieldatP}{\[eq:fieldatP\]}) can therefore be expressed (as a vector) in
+\eqref{eq:fieldatP}) can therefore be expressed (as a vector) in
 terms of the dipole moment, as follows:
 
-\[\label{eq:fieldatP}
-\E = \frac{1}{4 \pi \epsilon_0} \frac{\p}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}\]
+\begin{equation}
+\label{eq:fieldatPdipole}
+\mathbf{E} = \frac{1}{4 \pi \epsilon_0} \frac{\mathbf{p}}{\left( x^2 + \left( \frac{d}{2} \right)^2 \right)^{\frac{3}{2}}}
+\end{equation}
 
 In the limit of \(x \gg d\) (in other words, when we are at a distance \(x\)
 from the dipole that is much larger than the size of the dipole \(d\)) the
 electric field due to the dipole can be reduced to:
 
-\[\E = \frac{1}{4\pi \epsilon_0} \frac{\p}{x^3}\]
+\begin{equation}
+\label{eq:EvsP}
+\mathbf{E} = \frac{1}{4\pi \epsilon_0} \frac{\mathbf{p}}{x^3}
+\end{equation}
 
 \hypertarget{dipoles-in-external-electric-fields}{%
 \subsection{Dipoles in external electric fields}\label{dipoles-in-external-electric-fields}}
@@ -470,12 +704,13 @@ the centre of the dipole.
 
 The torque about the centre of the dipole is
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:torqueDipole}
 \tau = 2 F \frac{d}{2} \sin\theta = q E d \sin\theta = |p|E \sin\theta
-\end{aligned}\]
+\end{equation}
 
 The direction of the torque is perpendicular to the page, so it can be
-represented in vector form as \(\boldsymbol{\tau} = \p \times \E\).
+represented in vector form as \(\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}\).
 
 The torque will cause the dipole to rotate and align itself with the
 electric field as shown here:
@@ -487,21 +722,25 @@ energy configuration (although it should be fairly obvious). The work
 done is the integral of the product of the torque and the angle turned
 through:
 
-\[\begin{aligned}
-W &= \int_{\theta_0}^{\theta} |\tau| \d\theta \\
-&= \int_{\theta_0}^{\theta} pE \sin\theta \d\theta \\ 
-&= [-pE \cos\theta]_{\theta_0}^{\theta}
-\end{aligned}\]
+\begin{equation}
+\label{eq:workDone}
+\begin{array}{rcll}
+W &=& \int_{\theta_0}^{\theta} |\tau| \mathrm{d}\theta \\
+&=& \int_{\theta_0}^{\theta} pE \sin\theta \mathrm{d}\theta \\ 
+&=& [-pE \cos\theta]_{\theta_0}^{\theta}
+\end{array}
+\end{equation}
 
 The change in potential energy is \(\Delta U = W\), hence:
-\[\begin{aligned}
+\begin{equation}
+\label{eq:changeEpot}
 \Delta U = U(\theta_0) - U(\theta) = pE(\cos⁡\theta_0 - cos\theta)
-\end{aligned}\]
+\end{equation}
 
 The zero of potential energy \(U(\theta_0)\) can be chosen to be anywhere,
 so we can choose it to correspond to \(\theta_0 = 90^{\circ}\) in which
 case \(U = -pE \cos\theta\). This energy can be expressed in vector form
-as \(U = - \p \cdot \E\).
+as \(U = - \mathbf{p} \cdot \mathbf{E}\).
 
 Not surprisingly, the energy is a minimum when the dipole is aligned
 with the field at which point the torque will be zero.
@@ -546,17 +785,17 @@ from the charge because there is no source of electric field.
 Consider the field in and out of the volume enclosed between the two
 areas (a truncated cone). The total field in and out is the surface
 integral of the component of the field normal to the surfaces. On the
-curved faces, the normal component of \(\E\) is zero. On the spherical
+curved faces, the normal component of \(\mathbf{E}\) is zero. On the spherical
 faces, \(A_1\) and \(A_2\), the field is normal. If flux into the volume is
-negative, and flux out is positive \(\E\) decreases with \(\frac{1}{r^2}\)
+negative, and flux out is positive \(\mathbf{E}\) decreases with \(\frac{1}{r^2}\)
 and the area increases with \(r^2\). So the fluxes through the two faces,
 \(A_1\) and \(A_2\), are \textbf{equal} and \textbf{opposite}.
 
 \includegraphics[width=115mm,height=\textheight]{Figures/elecFlux2.png} \protect\hypertarget{fig:elecFlux2}{}{}
 
 If a surface is tilted at an angle \(\theta\) the field normal to the
-surface is \(\E_n = \E \cos\theta\). To determine the flux through the
-surface we need \(\oiint E \cos\theta \d A\), where the integral is over
+surface is \(\mathbf{E}_n = \mathbf{E} \cos\theta\). To determine the flux through the
+surface we need ∯ \(E \cos\theta \mathrm{d} A\), where the integral is over
 the surface. We can see that this flux is still the same as that through
 \(A_1\) and \(A_2\) because all the flux that impinges on \(A_2\) also
 impinges on \(A_3\).
@@ -565,15 +804,16 @@ Consider a spherical surface with a point charge \(q\) at the centre:
 
 \includegraphics[width=80mm,height=\textheight]{Figures/elecFlux3.png} \protect\hypertarget{fig:elecFlux3}{}{}
 
-The net flux is non-zero as \(\E\) is pointing outwards over the whole
-spherical surface. Because of the symmetry the magnitude of \(\E\) is
-consistent across the surface and \(\E\) is always perpendicular to the
+The net flux is non-zero as \(\mathbf{E}\) is pointing outwards over the whole
+spherical surface. Because of the symmetry the magnitude of \(\mathbf{E}\) is
+consistent across the surface and \(\mathbf{E}\) is always perpendicular to the
 surface.
 
-Total flux of \(\E\) is \(\Phi_{\E} = E_n \times Area\). Therefore
-\[\begin{aligned}
+Total flux of \(\mathbf{E}\) is \(\Phi_{\mathbf{E}} = E_n \times Area\). Therefore
+\begin{equation}
+\label{eq:fluxE}
 \Phi_E = \frac{q}{4\pi\epsilon_0 r^2} \times 4\pi r^2 = \frac{q}{\epsilon_0} 
-\end{aligned}\]
+\end{equation}
 
 \textbf{This result is independent of the radius of the sphere -- in fact, it
 is independent of the shape of the surface enclosing the charge.}
@@ -581,31 +821,37 @@ is independent of the shape of the surface enclosing the charge.}
 \hypertarget{gausss-law}{%
 \section{Gauss's Law}\label{gausss-law}}
 
+(\textbf{Note:} In Equations \eqref{eq:GaussnoQ}, \eqref{eq:Gauss2} and \eqref{eq:GaussLaw}, \(\iint_S\) represents the closed surface integral, which is denoted elsewhere in the text as ∯.)
+
 We can calculate the electric field from any charge distribution with
 Coulomb's Law. Gauss' Law in the integral form which we'll use here can
 calculate fields in some highly symmetric cases. Gauss' Law states that
 for any \textbf{closed surface} \(S\):
 
-\[\begin{aligned}
-\oiint{E_n} \d \S = 0   \quad \text{if no charge is enclosed}
-\end{aligned}\]
+\begin{equation}
+\label{eq:GaussnoQ}
+\iint_S{E_n} \mathrm{d} \mathbf{S} = 0
+\end{equation}
 
-and
+\textbf{if no charge is enclosed} and
 
-\[\begin{aligned}
-\oiint{E_n} \d \S &= \frac{q}{\epsilon_0} \quad  \text{if charge} \; q \; \mathrm{is enclosed}
-\end{aligned}\]
+\begin{equation}
+\label{eq:Gauss2}
+\iint_S{E_n} \mathrm{d} \mathbf{S} = \frac{q}{\epsilon_0}
+\end{equation}
 
-Or in words: the magnitude of the electric field normal to the surface
+\textbf{if charge \(q\) is enclosed}. Or in words: the magnitude of the electric field normal to the surface
 integrated over the whole of the surface is equal to the charge enclosed
 divided by \(\epsilon_0\).
 
 More generally, the integral form of Gauss's Law is
-\[\label{eq:GaussLaw} 
-\oiint \E \cdot \d \S =\frac{Q}{\epsilon_0}\]
+\begin{equation}
+\label{eq:GaussLaw} 
+\iint_S \mathbf{E} \cdot \mathrm{d} \mathbf{S} =\frac{Q}{\epsilon_0}
+\end{equation}
 
-\(\d \S\) is a vector normal to the surface with magnitude equal to the
-size of an element of area. \(\E \cdot \d \S\), which is a scalar product,
+\(\mathrm{d} \mathbf{S}\) is a vector normal to the surface with magnitude equal to the
+size of an element of area. \(\mathbf{E} \cdot \mathrm{d} \mathbf{S}\), which is a scalar product,
 extracts the component of the electric field normal to the surface and
 multiplies it by the size of an element of the area. \(Q\) is the total
 charge enclosed within \(S\), where \(Q = \sum_i q_i\) where the sum runs
@@ -640,9 +886,11 @@ Consider a spherical shell with charge \(Q\). By symmetry, the field is
 radial in all directions.
 
 Applying Gauss's Law with a spherical Gaussian surface \textbf{outside} the
-shell, as shown in , gives: \[\begin{aligned}
+shell, as shown in , gives:
+\begin{equation}
+\label{eq:fieldShell}
 E_r = \frac{Q}{4\pi\epsilon_0 r^2} 
-\end{aligned}\]
+\end{equation}
 
 i.e.~the same as point charge or a solid sphere of charge.
 
@@ -686,12 +934,13 @@ perpendicular to the surface.
 \section{Electric potential}\label{electric-potential}}
 
 The electric potential due to a positive charge is positive. The
-electric potential due to a negative charge is negative The potential
+electric potential due to a negative charge is negative. The potential
 difference between two points, \(a\) and \(b\), is
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:DeltaV}
 \Delta V = V_b - V_a =\frac{(U_b - U_a)}{q_0}   
-\end{aligned}\]
+\end{equation}
 
 The electric (or electrostatic) potential, often just called potential,
 is defined as the potential energy per unit (test) charge.
@@ -705,36 +954,44 @@ The change in potential energy in going from point \(a\) to point \(b\) is
 given by the integral along the path from \(a\) to \(b\) of the work done on
 the charge:
 
-\[\begin{aligned}
-\Delta U = - W_{ab} = -\int_a^b \F \cdot \d\l = -q_0 \int_a^b \E \cdot \d\l
-\end{aligned}\]
+\begin{equation}
+\label{eq:DeltaU}
+\Delta U = - W_{ab} = -\int_a^b \mathbf{F} \cdot \mathrm{d}\mathrm{l} = -q_0 \int_a^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}
 
-We know that \[\begin{aligned}
-\frac{\Delta U}{q_0} &= V_b - V_a
-\end{aligned}\]
+We know that
+\begin{equation}
+\label{eq:DeltaU2}
+\frac{\Delta U}{q_0} = V_b - V_a
+\end{equation}
 
 hence
 
-\[\begin{aligned}
-\Delta V_{ab} &= -\int_a^b \E \cdot \d\l
-\end{aligned}\]
+\begin{equation}
+\label{eq:DeltaVab}
+\Delta V_{ab} = -\int_a^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}
 
 So the change in electrical potential is the line integral of the
 electric field along the path from \(a\) to \(b\). We can choose the
 reference point of the potential to be where we like but normally select
 infinity. So
 
-\[\begin{aligned}
-V_b = -\int_\infty^b \E \cdot \d\l
-\end{aligned}\]
+\begin{equation}
+\label{eq:Vb}
+V_b = -\int_\infty^b \mathbf{E} \cdot \mathrm{d}\mathrm{l}
+\end{equation}
 
 The potential at a distance \(r\) from a point charge is
 
-\[\begin{aligned}
-V(r) &= -\int_\infty^r \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \d r \\
-     &= \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{r} - \frac{1}{\infty} \right] \\
-     &= \frac{q}{4\pi\epsilon_0} \frac{1}{r}
-\end{aligned}\]
+\begin{equation}
+\label{eq:V-r}
+\begin{array}{rcll}
+V(r) &=& -\int_\infty^r \frac{1}{4\pi\epsilon_0} \frac{q}{r^2} \mathrm{d} r \\
+     &=& \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{r} - \frac{1}{\infty} \right] \\
+     &=& \frac{q}{4\pi\epsilon_0} \frac{1}{r}
+\end{array}
+\end{equation}
 
 \textbf{Note:} The dependence of the potential for a point charge on distance
 is \(\frac{1}{r}\) and the force depends on \(\frac{1}{r^2}\) because the
@@ -754,7 +1011,7 @@ charge and when a second charge is brought near to the first it
 interacts with the field that is already present.
 
 Can we think of ``magnetic charges" interacting via the magnetic field,
-\(\B\)? \textbf{No.} This is because magnetic charges have not been found to
+\(\mathbf{B}\)? \textbf{No.} This is because magnetic charges have not been found to
 exist - there is no evidence for single North or South poles. Searches
 have been made for magnetic monopoles, but without any success, although
 their existence has not been entirely ruled out. (This is way beyond our
@@ -767,7 +1024,7 @@ be represented using field lines and the density of field lines
 represents the strength of the field and the direction is that in which
 a north pole would move.
 
-The magnetic field \(\B\) is measured in the SI unit of Tesla or in Gauss:
+The magnetic field \(\mathbf{B}\) is measured in the SI unit of Tesla or in Gauss:
 1 Tesla = \(10^4\) Gauss =
 \(\frac{\mathrm{Ns}}{\mathrm{Cm}} = \frac{\mathrm{N}}{\mathrm{Am}}\).
 
@@ -785,7 +1042,7 @@ a \emph{moving} charge is perpendicular to the field lines.
 
 Magnetic field lines always form closed loops whereas electric field
 lines begin and end on charges. This means that a version of Gauss' Law
-for magnetism states \(\Phi_B = \oiint \B \cdot \d\s = 0\) (see Tipler \&
+for magnetism states \(\Phi_B =\) ∯ \(\mathbf{B} \cdot \mathrm{d} \mathbf{S} = 0\) (see Tipler \&
 Mosca, 27-3). As field lines are closed all field lines entering a
 closed surface must leave it as well. So net magnetic flux through the
 surface is zero.
@@ -803,11 +1060,14 @@ is in the direction of the curl of your fingers.
 The Lorentz force describes the force felt by a moving charge in a
 combination of electric and magnetic fields.
 
-\[\F = q(\E + \v \times \B)\]
+\begin{equation}
+\label{eq:qvCrossB}
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\end{equation}
 
-The cross product tells us that force due to the magnetic field \(\B\) is
+The cross product tells us that force due to the magnetic field \(\mathbf{B}\) is
 perpendicular to the magnetic field and the velocity of a charged
-particle (\(\v\)) and therefore when the velocity and magnetic field are
+particle (\(\mathbf{v}\)) and therefore when the velocity and magnetic field are
 parallel (or antiparallel) to each other, the force on the charged
 particle due to the magnetic field is zero. Since the magnetic force, is
 always perpendicular to the velocity vector of the particle it cannot do
@@ -841,7 +1101,7 @@ and magnetic fields, that is electric and magnetic fields at right
 angles to each other. First the deflection in the \(E\) field only is
 measured. In this case the force depends on charge and the deflection on
 mass and \(v\). A magnetic field is that applied to give an overall
-deflection of zero. At this point the forces due to \(\E\) and \(\B\) are
+deflection of zero. At this point the forces due to \(\mathbf{E}\) and \(\mathbf{B}\) are
 balanced and the velocity of the particle is therefore measured and can
 be used with the 1st result, for the \(E\) field only, to calculate the
 charge/mass ratio.
@@ -857,9 +1117,9 @@ charge/mass ratio.
 \caption{image}
 \end{figure}
 
-If \(\B\) and \(\v\) are perpendicular, a particle moving in a constant \(\B\)
+If \(\mathbf{B}\) and \(\mathbf{v}\) are perpendicular, a particle moving in a constant \(\mathbf{B}\)
 field is forced to move in a circle by the (centripetal) magnetic force.
-Note that if there is a component of \(v\) in the same direction as \(\B\)
+Note that if there is a component of \(v\) in the same direction as \(\mathbf{B}\)
 there is no force in this direction and that component of the velocity
 is unchanged in direction or magnitude causing the particle to move in a
 spiral. The frequency of rotation around the circle is the cyclotron
@@ -889,7 +1149,7 @@ current. This arguments is describe below but you can also look at the
 derivation in Tipler \& Mosca (26-1).
 
 The expression for the force on a moving charge in a current carrying
-conductor in a magnetic field is \(\F = q\v_d \times \B\) (where \(\v_d\) is
+conductor in a magnetic field is \(\mathbf{F} = q\mathbf{v}_d \times \mathbf{B}\) (where \(\mathbf{v}_d\) is
 the drift velocity for the charge carriers). The current is the rate at
 which charge passes any point on the wire and this is just \(nqv_d\) where
 \(n\) is the number of charge carriers per unit length. Note that if the
@@ -897,13 +1157,13 @@ carriers are positive then the vector \(qv_d\) points in the direction of
 conventional current flow. If \(q\) is negative \(v_d\) points in a
 direction opposite to conventional current flow but the combination
 \(qv_d\) points in the direction of conventional current flow. The force
-per unit length on the wire is \(nq \v_d \times \B\) and the force on a
-length \(L\) of wire is \(Lnq \v_d \times \B\). We define \(\L\) as the vector
+per unit length on the wire is \(nq \mathbf{v}_d \times \mathbf{B}\) and the force on a
+length \(L\) of wire is \(Lnq \mathbf{v}_d \times \mathbf{B}\). We define \(\mathrm{L}\) as the vector
 length of the wire i.e.~a vector with length equal to the length of the
-wire and in the direction of the flow of conventional current. \(\L\)
-therefore points in the direction of \(q \v_d\) so \(\L \times \B\) is in
+wire and in the direction of the flow of conventional current. \(\mathrm{L}\)
+therefore points in the direction of \(q \mathbf{v}_d\) so \(\mathrm{L} \times \mathbf{B}\) is in
 the direction of the force on the wire and, since \(I = nq v_d\), the
-force is given by \(\F = I \L \times \B\).
+force is given by \(\mathbf{F} = I \mathrm{L} \times \mathbf{B}\).
 
 \hypertarget{force-on-current-loops-motors}{%
 \subsection{Force on current loops \& motors}\label{force-on-current-loops-motors}}
@@ -911,7 +1171,7 @@ force is given by \(\F = I \L \times \B\).
 \emph{Recommended reading:} Tipler \& Mosca 26-3
 
 The force on a current carrying conductor in a magnetic field
-\(\F = I \L \times \B\) can be used to make a motor. The principle of
+\(\mathbf{F} = I \mathrm{L} \times \mathbf{B}\) can be used to make a motor. The principle of
 operation of a motor made of a single loop of wire is shown nicely in
 \url{http://www.walter-fendt.de/html5/phen/electricmotor_en.htm}.
 
@@ -924,14 +1184,14 @@ operation of a motor made of a single loop of wire is shown nicely in
 The length of the coil as viewed in \textbf{a)} is \(b\). The current at the
 top of the loop as viewed from positive \(z\) is flowing down the page to
 the right. Using the right-hand rule to work out the direction of
-\(\L \times \B\) gives a force in the positive \(z\)-direction. This will be
+\(\mathrm{L} \times \mathbf{B}\) gives a force in the positive \(z\)-direction. This will be
 balanced by the force from the other end of the loop (where the current
 flows in the opposite direction. These sides do not produce a torque. In
 \textbf{a)}, the sides of length \(a\) are directed into the page. At the lower
 end of \textbf{a)}, the current flows into the page in the negative
-\(z\)-direction so \(\L\) is in the negative \(z\)-direction and the field
-\(\B\) is in the positive \(x\)-direction. Since
-\(-\hat{\k} \times \hat{\i} = \hat{\i}\), the force on that side is
+\(z\)-direction so \(\mathrm{L}\) is in the negative \(z\)-direction and the field
+\(\mathbf{B}\) is in the positive \(x\)-direction. Since
+\(-\hat{\mathbf{k}} \times \hat{\mathbf{i}} = \hat{\mathbf{i}}\), the force on that side is
 therefore in the negative \(y\)-direction. On the other side of the loop
 the current is reversed but not the field so that the force is in the
 opposite direction. The magnitude of the force is the length of the
@@ -951,9 +1211,9 @@ For a single loop the torque is \(\Gamma = BIab \sin\theta\), noting that
 \(ab\) is the area of the loop. If instead of a single loop there is a
 coil with \(N\) loops then the torque is simply multiplied by \(N\), hence
 \(\Gamma = NBIab \sin\theta\). By analogy with the electric dipole, we can
-define a magnetic dipole moment \(\boldsymbol{\mu} = IA \hat{\n}\), where
-\(\hat{\n}\) is a unit vector in the direction normal to the area \(A\). So
-we can express the torque as \(\Gamma = \boldsymbol{\mu} \times \B\).
+define a magnetic dipole moment \(\boldsymbol{\mu} = IA \hat{\mathbf{n}}\), where
+\(\hat{\mathbf{n}}\) is a unit vector in the direction normal to the area \(A\). So
+we can express the torque as \(\Gamma = \boldsymbol{\mu} \times \mathbf{B}\).
 
 \hypertarget{the-biot-savart-law}{%
 \section{The Biot-Savart Law}\label{the-biot-savart-law}}
@@ -962,7 +1222,7 @@ we can express the torque as \(\Gamma = \boldsymbol{\mu} \times \B\).
 
 We can generalize our previous result for the force on a current
 \(F = IL \times B\) by considering a small element of current
-\(dF = I \d s \times B\) and then calculate the field due to a sum of
+\(dF = I \mathrm{d} s \times B\) and then calculate the field due to a sum of
 current elements where these do not necessarily lie on a straight line
 or other simple shape. The magnetic field could have been produced by
 another current which give us interactions between currents.
@@ -975,21 +1235,27 @@ another current which give us interactions between currents.
 
 A point charge, \(q\) ,moving with velocity, \(v\), produces a magnetic
 field \(B\) at a distance \(r\) in a direction given by
-\(\v \times \hat{\r}\), where \(\hat{\r}\) points from \(q\) to the point
+\(\mathbf{v} \times \hat{\mathbf{r}}\), where \(\hat{\mathbf{r}}\) points from \(q\) to the point
 where the field is measured.
 
-\[\begin{aligned}
-\B = \frac{\mu_0}{4\pi} q \v \times \frac{\hat{\r}}{r^2} 
-\end{aligned}\]
+\begin{equation}
+\label{eq:Bfield}
+\mathbf{B} = \frac{\mu_0}{4\pi} q \mathbf{v} \times \frac{\hat{\mathbf{r}}}{r^2} 
+\end{equation}
 
-The magnetic field at point \(P\) due to the current element \(I \d\s\) is
-therefore \[\begin{aligned}
-\d \B = \mu_0/4\pi  I \d\s \times \r /r^2 
-\end{aligned}\]
+The magnetic field at point \(P\) due to the current element \(I \mathrm{d}\mathbf{s}\) is
+therefore
 
-or, in terms of the magnitudes, \[\begin{aligned}
-\d \B = \frac{\mu_0}{4\pi}  \frac{I \d s  \sin\theta}{r^2} 
-\end{aligned}\]
+\begin{equation}
+\label{eq:BIelement}
+\mathrm{d} \mathbf{B} = \frac{\mu_0}{4\pi}  I \mathrm{d}\mathbf{s} \times \mathbf{r} /r^2 
+\end{equation}
+
+or, in terms of the magnitudes,
+\begin{equation}
+\label{eq:magBI}
+\mathrm{d} B = \frac{\mu_0}{4\pi}  \frac{I \mathrm{d} s  \sin\theta}{r^2} 
+\end{equation}
 
 This is the \textbf{Biot-Savart Law}, which is analogous to Coulomb's Law for
 evaluating the electric field due to a point charge. The Biot-Savart Law
@@ -1001,27 +1267,30 @@ can be used to calculate the field due to a set of conductors.  
 \emph{Recommended reading:} Tipler \& Mosca 27-4
 
 Ampère's Law states that the sum (or integral) of the product
-\(\B \cdot \d\s\) around a closed loop is equal to the total current
+\(\mathbf{B} \cdot \mathrm{d}\mathbf{s}\) around a closed loop is equal to the total current
 flowing through the surface enclosed by the loop multiplied by the
-permeability of free space, \(\mu_0\). Mathematically, \[\begin{aligned}
-\oint \B \cdot \d \s = \mu_0 I
-\end{aligned}\]
+permeability of free space, \(\mu_0\). Mathematically,
 
-where \(\d\s\) is a vector that points along the tangent to the loop with
+\begin{equation}
+\label{eq:BloopIntegral}
+\oint \mathbf{B} \cdot \mathrm{d} \mathbf{s} = \mu_0 I
+\end{equation}
+
+where \(\mathrm{d}\mathbf{s}\) is a vector that points along the tangent to the loop with
 a magnitude equal to a small length of the curve.
 
 To use Ampère's law we construct an imaginary Ampèrian loop around some
 current carrying conductors. (Compare this to constructing a Gaussian
 surface around charges to determine the electric flux and hence the
 field.) In this case the loop is arranged so it is parallel to or
-perpendicular to the magnetic field so \(\B \cdot \d\s =|\B||\d\s|\) or
-\(\B\cdot \d\s = 0\) respectively.
+perpendicular to the magnetic field so \(\mathbf{B} \cdot \mathrm{d}\mathbf{s} =|\mathbf{B}||\mathrm{d}\mathbf{s}|\) or
+\(\mathbf{B}\cdot \mathrm{d}\mathbf{s} = 0\) respectively.
 
 We will solve symmetric problems in this way as there are limitations to
 Ampère's law (discussed in Tipler \& Mosca 27-4). We evaluate the line
-integral of \(\B\) around the loop which is equal to the sum of the
+integral of \(\mathbf{B}\) around the loop which is equal to the sum of the
 current flowing through the loop. (Compare with Gauss's Law where the
-integral of \(\E\) over a surface was equal to the charge enclosed by the
+integral of \(\mathbf{E}\) over a surface was equal to the charge enclosed by the
 surface.)
 
 We'll consider a couple of classic examples of using Ampère's Law:
@@ -1040,8 +1309,8 @@ Consider the field outside a single wire carrying current and determine
 the field at a distance \(R\) from the wire. From the symmetry of the
 problem the field lines are circular about the wire and the field has a
 constant magnitude at a constant distance from the wire. So we pick a
-loop that is also circular. The magnitude of \(\B\) is constant along the
-loop and the loop is always parallel to \(\B\).
+loop that is also circular. The magnitude of \(\mathbf{B}\) is constant along the
+loop and the loop is always parallel to \(\mathbf{B}\).
 
 \begin{figure}
 \centering
@@ -1049,17 +1318,23 @@ loop and the loop is always parallel to \(\B\).
 \caption{image}
 \end{figure}
 
-Ampère's Law states \(\oint \B \cdot \d\s = \mu_0 I\). If we perform the
-integral in the clockwise direction then the element of the path \(\d\s\)
+Ampère's Law states \(\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s} = \mu_0 I\). If we perform the
+integral in the clockwise direction then the element of the path \(\mathrm{d}\mathbf{s}\)
 is parallel to B and so the integral is the magnitude of B multiplied by
 the magnitude of ds integrated around the path. This is simply the
-length of the path times the magnitude of \(\B\):
+length of the path times the magnitude of \(\mathbf{B}\):
 
-\[\begin{aligned}
-\oint \B \cdot \d\s = B \times 2\pi r = \mu_0 I
-\end{aligned}\]
+\begin{equation}
+\label{eq:ointB2}
+\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s} = B \times 2\pi r = \mu_0 I
+\end{equation}
 
-Rearranging gives \[B = \frac{\mu_0 I}{2\pi R}\]
+Rearranging gives
+
+\begin{equation}
+\label{eq:BiotSavart}
+B = \frac{\mu_0 I}{2\pi R}
+\end{equation}
 
 as for Biot-Savart Law -- as we would expect.
 
@@ -1092,17 +1367,18 @@ perpendicular to the field and partly in a field free region.
 \caption{image}
 \end{figure}
 
-The only contribution to \(\oint \B \cdot \d\s\) from the loop is the side
-ab where, in this case, the field is parallel to the path. Since \(\B\) is
-uniform along the path \(\oint \B \cdot \d\s = BL\) where \(L\) is the
+The only contribution to \(\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s}\) from the loop is the side
+ab where, in this case, the field is parallel to the path. Since \(\mathbf{B}\) is
+uniform along the path \(\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s} = BL\) where \(L\) is the
 length of the path from a to b.
 
 The total current enclosed by the loop is the number of turns per unit
 length in the solenoid multiplied by the current, \(nIL\).
-\[\begin{aligned}
-\therefore \oint \B \cdot \d\s = BL = \mu_0 nIL \\
+\begin{equation}
+\label{eq:ointB3}
+\therefore \oint \mathbf{B} \cdot \mathrm{d}\mathbf{s} = BL = \mu_0 nIL \\
 \therefore B = \mu_0 nI
-\end{aligned}\]
+\end{equation}
 
 \hypertarget{faradays-law-of-induction}{%
 \section{Faraday's Law of induction}\label{faradays-law-of-induction}}
@@ -1152,14 +1428,15 @@ The magnetic flux through a surface is the component of the field
 perpendicular to the surface multiplied by the area of the surface.
 Mathematically
 
-\[\begin{aligned}
-\Phi_B = \int\B \cdot \d\s \\  
-\text{or} \; \Phi_B = \int \B \cos\theta \d s
-\end{aligned}\]
+\begin{equation}
+\label{eq:magFlux}
+\Phi_B = \int\mathbf{B} \cdot \mathrm{d}\mathbf{s} \\  
+\text{or} \; \Phi_B = \int \mathbf{B} \cos\theta \mathrm{d} s
+\end{equation}
 
-where, as with Gauss's Law, \(\d \s\) is a vector perpendicular to the
+where, as with Gauss's Law, \(\mathrm{d} \mathbf{s}\) is a vector perpendicular to the
 surface and with magnitude equal to the area of an element of the
-surface. We take the dot product to extract the component of \(\B\)
+surface. We take the dot product to extract the component of \(\mathbf{B}\)
 perpendicular to the surface. Magnetic flux is measured in Webers (Wb).
 You can see that this must be equivalent to T m\(^2\) and, less obviously,
 Vs.
@@ -1167,9 +1444,10 @@ Vs.
 Faraday's Law states that the induced emf in a circuit is equal to the
 negative of the rate of change of flux through the circuit, written as
 
-\[\begin{aligned}
-V = - \frac{\d \Phi_B}{\d t}
-\end{aligned}\]
+\begin{equation}
+\label{eq:faradaysLaw}
+V = - \frac{\mathrm{d} \Phi_B}{\mathrm{d} t}
+\end{equation}
 
 If rather than a single loop of wire a coil has \(N\) turns close together
 then the induced emf is simply multiplied by \(N\).
@@ -1191,9 +1469,10 @@ ferromagnetic core) so that the field from one coil is coupled to the
 other coil. An AC voltage applied to the primary coil (\(V_1\)) is
 transformed to a different voltage at the secondary coil (\(V_2\)).
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:transformer}
 \frac{V_2}{V_1} = \frac{N_2}{N_1}
-\end{aligned}\]
+\end{equation}
 
 where \(N_1\) and \(N_2\) are the number of turns in the primary and
 secondary coils, respectively.
@@ -1302,7 +1581,7 @@ is the Henry, equivalent to kg m\(^2\) s\(^{-2}\) A\(^{-2}\).
 
 The inductance relates the induced emf to the rate of change of current
 for a particular coil. So the voltage across an ideal inductor is given
-by \(V = -L \frac{\d I}{\d t}\). An ideal inductor has zero resistance,
+by \(V = -L \frac{\mathrm{d} I}{\mathrm{d} t}\). An ideal inductor has zero resistance,
 and we would treat a real inductor as a combination of a resistor and
 inductor in series.
 
@@ -1404,9 +1683,11 @@ Resistors are passive components that resist the flow of current within
 the circuit. Resistance is a type of impedance. Resistance is measured
 in Ohms (\(\Omega\)) where\\
 \(1 \; \Omega = \frac{1 \; \text{V}}{1 \; \text{A}} = 1 \; \text{kg} \; \text{m}^2 \; \text{A}^{-2} \; \text{s}^{-3}\)\\
-Ohmic resistors obey Ohm's Law, which is \[\begin{aligned}
+Ohmic resistors obey Ohm's Law, which is
+\begin{equation}
+\label{eq:Ohms}
 V = IR
-\end{aligned}\]
+\end{equation}
 
 For an Ohmic resistor the resistance does not depend on current or
 potential drop. Real resistors will show some change in resistance with
@@ -1430,9 +1711,10 @@ much charge can be stored at a given voltage. The relationship between
 voltage (\(V\)), charge (\(Q\)) and capacitance (\(C\)) in a capacitor is
 therefore
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:Vcapacitor}
 V_C = \frac{Q}{C}
-\end{aligned}\]
+\end{equation}
 
 \hypertarget{inductors}{%
 \subsection{Inductors}\label{inductors}}
@@ -1448,9 +1730,10 @@ Inductors are devices that resist a change in current because the
 changing magnetic field produced in the inductor by a changing current
 induces an EMF that opposes the change in current in the device itself:
 
-\[\begin{aligned}
-V_L  = -L \frac{\d I}{\d t}
-\end{aligned}\]
+\begin{equation}
+\label{eq:Vinductor}
+V_L  = -L \frac{\mathrm{d} I}{\mathrm{d} t}
+\end{equation}
 
 \begin{figure}
 \centering
@@ -1476,9 +1759,10 @@ The rule states:\\
 ``Around any closed loop the algebraic sum of the changes in potential
 must equal zero"
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:sumEpsilon}
 \sum_i \epsilon_i =0
-\end{aligned}\]
+\end{equation}
 
 \hypertarget{the-junction-rule}{%
 \subsection{The junction rule}\label{the-junction-rule}}
@@ -1489,9 +1773,10 @@ matched by current flow out of a junction. The rule states:\\
 
 ``The algebraic sum of currents into a junction must be equal to zero"
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:sumCurrents}
 I_1 = I_2 + I_3
-\end{aligned}\]
+\end{equation}
 
 \begin{figure}
 \centering
@@ -1527,21 +1812,21 @@ clockwise direction.\\
 The potential difference across the source of EMF is \(+\epsilon\).\\
 The potential difference across the resistor is \(-IR\).\\
 The potential difference across the capacitor is \(-\frac{Q}{C}\).\\
-The current \(I\) and charge \(Q\) are related by \(I = \frac{\d Q}{\d t}\).\\
+The current \(I\) and charge \(Q\) are related by \(I = \frac{\mathrm{d} Q}{\mathrm{d} t}\).\\
 From Kirchoff's loop rule the sum of all the voltages is
 \(0 \therefore +\epsilon - IR - \frac{Q}{C} = 0\).\\
 Substituting for \(I\) we get
-\(\epsilon - \frac{\d Q}{\d t} R - \frac{Q}{C} = 0\) and the solution of
+\(\epsilon - \frac{\mathrm{d} Q}{\mathrm{d} t} R - \frac{Q}{C} = 0\) and the solution of
 that equation is
 \(Q = \epsilon C \left(1 + \exp⁡\left(-\frac{t}{RC} \right) \right)\) and
 the current is
-\(I = \frac{\d Q}{\d t} = \frac{\epsilon}{R} \exp\left( - \frac{t}{RC} \right)\).\\
+\(I = \frac{\mathrm{d} Q}{\mathrm{d} t} = \frac{\epsilon}{R} \exp\left( - \frac{t}{RC} \right)\).\\
 We can then calculate the voltage across the different components as a
 function of time.\\
 The capacitor:
 \(V_C = \frac{Q}{C} = \epsilon \left(1 - \exp⁡ \left(- \frac{t}{RC} \right) \right)\).\\
 The resistor:
-\(V_R = IR = \frac{\d Q}{\d t} R = \epsilon \exp⁡\left(- \frac{t}{RC} \right)\).
+\(V_R = IR = \frac{\mathrm{d} Q}{\mathrm{d} t} R = \epsilon \exp⁡\left(- \frac{t}{RC} \right)\).
 
 \hypertarget{inductors-in-dc-circuits}{%
 \section{Inductors in DC circuits}\label{inductors-in-dc-circuits}}
@@ -1554,10 +1839,13 @@ But real circuits have resistance so there is some transient behaviour
 which is similar to the LC circuit capacitors but not quite the same.
 For the LR circuit shown below, the current and potential differences as
 a function of time are\\
+
 Current:
-\(I = \frac{\epsilon}{R} \left( 1 - \exp \left⁡( - \frac{Rt}{L} \right) \right)\).\\
+\(I = \frac{\epsilon}{R} \left(1 - \exp\left(-\frac{Rt}{L}\right) \right)\).\\
+
 Potential difference across the inductor:
 \(V_L = \epsilon \exp⁡\left(- \frac{Rt}{L} \right)\).\\
+
 Potential difference across the resistor:
 \(V_R = \epsilon \left (1 - \exp⁡ \left( - \frac{Rt}{L} \right) \right)\).
 
@@ -1589,16 +1877,24 @@ next.
 
 Using Kirchhoff's \textbf{loop rule}, \(\sum_i \epsilon_i = 0\).\\
 The expressions for \(V_C\) and \(V_L\) are \(V_C = \frac{Q}{C}\),
-\(V_L = -L \frac{\d I}{\d t}\)...\\
+\(V_L = -L \frac{\mathrm{d} I}{\mathrm{d} t}\)...\\
 ...and remembering that current is the rate of flow of charge. We can
 produce an equation for the charge on the capacitor and, from there, for
-the current: \[\frac{\d^2 Q}{\d t^2} = - \frac{1}{LC} Q
-\label{eq:QtDiff}\]
+the current:
+
+\begin{equation}
+\label{eq:QtDiff}
+\frac{\mathrm{d}^2 Q}{\mathrm{d} t^2} = - \frac{1}{LC} Q
+\end{equation}
 
 This equation can be compared with the equation for undamped simple
 harmonic motion for a block on a spring (see Lecture 1 of Oscillations
-and Waves). By comparing with that equation, the solution to Equation
-\protect\hyperlink{eq:QtDiff}{\[eq:QtDiff\]} is \[Q = Q_0 \cos⁡(\omega_0 t + \delta)\]
+and Waves). By comparing with that equation, the solution to Equation \eqref{eq:Qtdiff} is
+
+\begin{equation}
+\label{eq:Qsolution}
+Q = Q_0 \cos⁡(\omega_0 t + \delta)
+\end{equation}
 
 with the natural frequency given by \(\omega_0 = \sqrt{ \frac{1}{LC} }\).\\
 Now add some resistance into the same circuit to create an LCR circuit.
@@ -1606,11 +1902,17 @@ The resistance dissipates energy and so the energy in the circuit
 decreases with time i.e.~the oscillations are damped.
 
 The equation for the charge on the capacitor is:
-\[L \frac{ \d^2 Q}{\d t^2} + R \frac{\d Q}{\d t} + \frac{Q}{C} = 0\]
+\begin{equation}
+\label{eq:diffEqQ}
+L \frac{ \mathrm{d}^2 Q}{\mathrm{d} t^2} + R \frac{\mathrm{d} Q}{\mathrm{d} t} + \frac{Q}{C} = 0
+\end{equation}
 
 Comparing with the damped oscillations of a mass on a spring (as covered
 in Oscillations and Waves) the solution is:
-\[Q = Q_0 \e^{ - \frac{-t}{2\tau} } \e^{i(\omega^{'} t + \delta)}\]
+\begin{equation}
+\label{eq:Qsol}
+Q = Q_0 e^{ - \frac{-t}{2\tau} } e^{i(\omega^{'} t + \delta)}
+\end{equation}
 
 where \(\tau = \frac{L}{R}\),
 \(\omega^{'} = \sqrt{ \omega_0^2 - \left( \frac{R}{2 L} \right)^2}\) and
@@ -1621,9 +1923,10 @@ produces forced oscillations. The steady state solution is oscillations
 with frequency \(\omega\) and an amplitude that depends on the applied
 frequency.
 
-\[\begin{aligned}
+\begin{equation}
+\label{eq:Q0}
 Q_0 = \frac{V_0}{\sqrt{ L^2 (\omega_0^2 - \omega^2)^2 + R^2 \omega^2 }}
-\end{aligned}\]
+\end{equation}
 
 The maximum \(Q_0\) and therefore the maximum current occurs at resonance,
 when \(\omega_0 = \frac{1}{\sqrt{LC}}\), so it is possible to adjust \(C\)
@@ -1632,14 +1935,18 @@ resonance of your tuner would be sharp to reduce interference between
 radio stations with similar frequencies.
 
 The sharpness of the resonance depends on the \(Q\)-factor for mechanical
-resonance: \[\begin{aligned}
+resonance:
+\begin{equation}
+\label{eq:Qfactor}
 Q = \frac{2\pi}{ \left( \frac{|\Delta E|}{E} \right)_{cycle} } = \frac{\omega_0}{\Delta \omega} = \frac{\omega_0 m}{b}
-\end{aligned}\]
+\end{equation}
 
 Making the usual replacements \(m \rightarrow L\), \(b \rightarrow R\), for
-electrical circuits: \[\begin{aligned}
+electrical circuits:
+\begin{equation}
+\label{eq:QvsOmega}
 Q = \frac{\omega_0 L}{R}
-\end{aligned}\]
+\end{equation}
 
 The resonance is when \(Q\) is large, so for a sharp peak (to only pick up
 one radio station at a time) you require that the circuit has a small
@@ -1649,13 +1956,16 @@ resistance and a large inductance.
 \section{Complex electrical impedance}\label{complex-electrical-impedance}}
 
 The equation for forced oscillations of an LCR circuit, where the
-applied voltage is represented by the real part of \(V_0 \e^{i\omega t}\),
+applied voltage is represented by the real part of \(V_0 e^{i\omega t}\),
 is
 
-\[L \frac{ \d^2 Q}{\d t^2} + R \frac{\d Q}{\d t} + \frac{Q}{C} = V_0 \e^{i\omega t}\]
+\begin{equation}
+\label{eq:forcedOsc}
+L \frac{ \mathrm{d}^2 Q}{\mathrm{d} t^2} + R \frac{\mathrm{d} Q}{\mathrm{d} t} + \frac{Q}{C} = V_0 e^{i\omega t}
+\end{equation}
 
 and the solution for the charge on the capacitor is
-\(Q = Q_0 \e^{ i(\omega t + \delta)}\), with the phase \(\delta\) in terms
+\(Q = Q_0 e^{ i(\omega t + \delta)}\), with the phase \(\delta\) in terms
 of \(C\), \(L\) and \(R\) for the general solution of the equation given by
 \(\tan \delta = \frac{R}{ \omega L - \frac{1}{\omega C} }\).
 
@@ -1663,22 +1973,26 @@ The equations produced so far have been using charge \(Q\) as the
 variable, but it would be more usual to measure current, and what we are
 interested in is the phase of the current relative to the applied
 voltage. However it is easy to determine the current from the charge.
-\[Q = Q_0 \e^{i(\omega t + \delta)}  \therefore I = -\frac{\d Q}{\d t} = -i \omega Q_0 \e^{i(\omega t + \delta)}\]
+\begin{equation}
+\label{eq:QthereforeI}
+Q = Q_0 e^{i(\omega t + \delta)}  \therefore I = -\frac{\mathrm{d} Q}{\mathrm{d} t} = -i \omega Q_0 e^{i(\omega t + \delta)}
+\end{equation}
 
 where the minus sign is because we have defined the current to be
 discharging the capacitor.
 
 The amplitude of the current oscillations is \(I_0 = \omega Q_0\). Using
-the fact that \(-i = \e^{ -\frac{i\pi}{2} }\) we can rewrite the
-expression for \(I\) in terms of a product of \(\e^{i\omega t}\) (which is
-in phase with the applied voltage) and \(\e^{i\delta^{'}}\) (where
+the fact that \(-i = e^{ -\frac{i\pi}{2} }\) we can rewrite the
+expression for \(I\) in terms of a product of \(e^{i\omega t}\) (which is
+in phase with the applied voltage) and \(e^{i\delta^{'}}\) (where
 \(\delta^{'}\) is the phase difference between the voltage and the
 current).
 
-\[\begin{aligned}
-I = I_0 \e^{- \frac{i\pi}{2} } \e^{i\omega t} \e^{i\delta} = I_0 \e^{i\omega t} \e^{i \left( \delta - \frac{\pi}{2} \right) } = I_0 \e^{i\omega t} \e^{i \delta^{'}} \\
+\begin{equation}
+\label{eq:currentPhase}
+I = I_0 e^{- \frac{i\pi}{2} } e^{i\omega t} e^{i\delta} = I_0 e^{i\omega t} e^{i \left( \delta - \frac{\pi}{2} \right) } = I_0 e^{i\omega t} e^{i \delta^{'}} \\
 \delta^{'} = \delta - \frac{\pi}{2} \therefore \tan⁡\delta^{'} = -\frac{1}{\tan\delta} = \frac{ \frac{1}{\omega C} - \omega L }{R}
-\end{aligned}\]
+\end{equation}
 
 In circuits with reactive components the current is out of phase with
 the applied voltage. We can define a complex impedance \(Z\) which
@@ -1688,18 +2002,32 @@ overall impedance of a circuit can be calculated by using the
 expressions for adding resistor in series and parallel but replacing the
 resistances with the complex impedances.
 
-If we represent the voltage by the real part of \(V = V_0 \e^{i\omega t}\)
+If we represent the voltage by the real part of \(V = V_0 e^{i\omega t}\)
 using Ohm's Law \(V = IR\) gives
-\[I = \frac{V}{R} = \frac{ V_0 \e^{i\omega t} }{R} = I_0 \e^{i\omega t}\]
+
+\begin{equation}
+\label{eq:IvsT}
+I = \frac{V}{R} = \frac{ V_0 e^{i\omega t} }{R} = I_0 e^{i\omega t}
+\end{equation}
 
 As the current is in phase with \(V\),
-\[Z_R = \frac{V_0 \e^{i\omega t} }{ I_0 \e^{i\omega t}} = R\]
+
+\begin{equation}
+\label{eq:impedanceVI}
+Z_R = \frac{V_0 e^{i\omega t} }{ I_0 e^{i\omega t}} = R
+\end{equation}
 
 For a capacitor
-\[V = \frac{Q}{C} \therefore I = \frac{\d Q}{\d t} = C \frac{\d V}{\d t} = C V_0 i \omega \e^{i\omega t}\]
+\begin{equation}
+\label{eq:foraCapacitor}
+V = \frac{Q}{C} \therefore I = \frac{\mathrm{d} Q}{\mathrm{d} t} = C \frac{\mathrm{d} V}{\mathrm{d} t} = C V_0 i \omega e^{i\omega t}
+\end{equation}
 
 Defining impedance as voltage divided by current:
-\[Z_C = \frac{V}{I} = \frac{V_0 \e^{i\omega t} }{C V_0 \e^{i\omega t}} = \frac{1}{i\omega C}\]
+\begin{equation}
+\label{eq:ZVI}
+Z_C = \frac{V}{I} = \frac{V_0 e^{i\omega t} }{C V_0 e^{i\omega t}} = \frac{1}{i\omega C}
+\end{equation}
 
 A similar argument leads to \(Z_L = i\omega L\).
 
@@ -1713,35 +2041,49 @@ A similar argument leads to \(Z_L = i\omega L\).
 \end{figure}
 
 Impedances can be combined using the addition rules for resistors.\\
-Series: \[\begin{aligned}
+Series:
+\begin{equation}
+\label{eq:ImpedanceSeries}
  Z = Z_1 + Z_2 + Z_3 + ...
-\end{aligned}\]
+\end{equation}
 
-Parallel: \[\begin{aligned}
+Parallel:
+\begin{equation}
+\label{eq:ImpParallel}
 \frac{1}{Z} = \frac{1}{Z_1} + \frac{1}{Z_2} + \frac{1}{Z_3} + ...
-\end{aligned}\]
+\end{equation}
 
 For example, for the series circuit shown in , since all the impedances
 are in series we just sum them to get the overall impedance:
-\[\begin{aligned}
+\begin{equation}
+\label{eq:ImpOverall}
 Z_{tot} = R + Z_C + Z_L = R + \frac{1}{i\omega C} + i\omega L
-\end{aligned}\]
+\end{equation}
 
 To get the phase of the current with respect to the voltage, we write
-the impedance for the circuit in in the form \(|Z| \e^{i\phi}\).
+the impedance for the circuit in in the form \(|Z| e^{i\phi}\).
 
-We can rewrite \(Z_{tot}\) as a real and imaginary term: \[\begin{aligned}
+We can rewrite \(Z_{tot}\) as a real and imaginary term:
+
+\begin{equation}
+\label{eq:ZReal-Im}
 Z_{tot} = R + i\left( - \frac{1}{\omega C} + \omega L \right) 
-\end{aligned}\]
+\end{equation}
 
 The magnitude of the impedance is therefore
-\[\sqrt{ \Re(Z)^2 + \Im(Z)^2 } = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2 }\]
+\begin{equation}
+\label{eq:Zmag}
+\sqrt{ \Re(Z)^2 + \Im(Z)^2 } = \sqrt{ R^2 + \left( \omega L - \frac{1}{\omega C} \right)^2 }
+\end{equation}
 
 and the phase is
-\(\phi = \tan^{-1}⁡ \frac{\Im(Z)}{ \Re(Z)}= tan^{-1}⁡\left( \frac{ \omega L - \frac{1}{\omega C} }{R} \right)\)
+\(\phi = \tan^{-1}⁡ \frac{\Im(Z)}{ \Re(Z)}= \tan^{-1}⁡\left( \frac{ \omega L - \frac{1}{\omega C} }{R} \right)\)
 
 So the complex expression for the impedance is
-\[Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( i tan^{-1}⁡ \left( \frac{\omega L - \frac{1}{\omega C} }{R} \right)\right)\]
+\begin{equation}
+\label{eq:complexImpedance}
+Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( i \tan^{-1}⁡ \left( \frac{\omega L - \frac{1}{\omega C} }{R} \right)\right)
+\end{equation}
 
 We can represent the impedance on an Argand diagram as shown below.
 
@@ -1764,11 +2106,17 @@ the maximum power is transferred into the circuit.
 \section{Energy in LCR circuits}\label{energy-in-lcr-circuits}}
 
 Rewriting the equation for the LCR circuit gives
-\[V_0 \e^{i\omega t} = L \frac{\d I}{\d t} + RI + \frac{Q}{C}\]
+\begin{equation}
+\label{eq:LCRrewrite}
+V_0 e^{i\omega t} = L \frac{\mathrm{d} I}{\mathrm{d} t} + RI + \frac{Q}{C}
+\end{equation}
 
 The power supplied to the circuit is \(IV\). If the whole equation is
 multiplied by \(I\),
-\[I V_0 \e^{i\omega t} = IL \frac{\d I}{\d t} + RI^2 + \frac{IQ}{C}\]
+\begin{equation}
+\label{eq:multiplyByI}
+I V_0 e^{i\omega t} = IL \frac{\mathrm{d} I}{\mathrm{d} t} + RI^2 + \frac{IQ}{C}
+\end{equation}
 
 The term on the left-hand side is the power supplied to the circuit. The
 other terms must also be an energy rate. The middle term on the
@@ -1779,127 +2127,39 @@ which power is stored or released from the inductor and the capacitor.
 \hypertarget{energy-stored-in-an-inductor}{%
 \subsection{Energy stored in an inductor}\label{energy-stored-in-an-inductor}}
 
-\(IL \frac{\d I}{\d t}\) is the rate at which energy is stored in the
+\(IL \frac{\mathrm{d} I}{\mathrm{d} t}\) is the rate at which energy is stored in the
 magnetic field. The energy stored in the field at any point, \(U_B\), can
 be found by integrating.
-\[\frac{\d U_B}{\d t} = IL \frac{\d I}{\d t} \therefore U_B = \frac{I^2 L}{2}\]
+\begin{equation}
+\label{eq:dU-dT}
+\frac{\mathrm{d} U_B}{\mathrm{d} t} = IL \frac{\mathrm{d} I}{\mathrm{d} t} \therefore U_B = \frac{I^2 L}{2}
+\end{equation}
 
 \hypertarget{energy-stored-in-a-capacitor}{%
 \subsection{Energy stored in a capacitor}\label{energy-stored-in-a-capacitor}}
 
 \(\frac{IQ}{C}\) is the rate at which energy is stored in the electric
 field. The energy stored, \(U_C\), can be found by integrating.
-\[\begin{aligned}
-\frac{\d U_C}{\d t} = \frac{\d Q}{\d t} \frac{Q}{C} \therefore U_C = \frac{Q^2}{2C} = \frac{CV^2}{2}
-\end{aligned}\]
+\begin{equation}
+\label{eq:energyCap}
+\frac{\mathrm{d} U_C}{\mathrm{d} t} = \frac{\mathrm{d} Q}{\mathrm{d} t} \frac{Q}{C} \therefore U_C = \frac{Q^2}{2C} = \frac{CV^2}{2}
+\end{equation}
 
 \hypertarget{summary-1}{%
 \section{Summary}\label{summary-1}}
 
 \protect\hypertarget{tab:summary}{}{}
 
-\begin{longtable}[]{@{}lclc@{}}
+\begin{longtable}[]{@{}lclr@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Capacitors & \(V_C = \frac{Q}{C}\) & Inductors & \(V_L = -L \frac{\d I}{\d t}\) \\
+Capacitors & \(V_C = \frac{Q}{C}\) & Inductors & \(V_L = -L \frac{\mathrm{d} I}{\mathrm{d} t}\) \\
 & \(U_C = \frac{1}{2} \frac{Q^2}{C}\) & & \(U_L = \frac{1}{2} LI^2\) \\
 Complex impedance & \(Z_C = \frac{1}{i \omega C}\) & Kirchoff's Laws & \(\sum_i \epsilon_i = 0\) around a loop \\
 & \(Z_L = i \omega L\) & & \(\sum_i I_i = 0\) at a junction \\
 \end{longtable}
-
-At the end of this section you should be able to:
-
-\begin{itemize}
-\item
-  Analyse DC circuits containing \textbf{resistance}, \textbf{capacitance} and
-  \textbf{inductance} and with more than one source of EMF to determine the
-  current flowing at any point.
-\item
-  Analyse AC circuits including the same types of components using
-  complex notation for impedance to determine the current and its
-  phase relation to the applied voltage.
-\item
-  Determine the parameters associated with oscillations in LC and LCR
-  circuits, including the energy stored.
-\end{itemize}
-
-\hypertarget{sec:Sols}{%
-\chapter{Exercise solutions}\label{sec:Sols}}
-
-\hypertarget{ex1Sol}{%
-\section*{Exercise solution}\label{ex1Sol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{dipoleEx}{Click here to go back to the exercise.})
-
-At large \(y\) (\(y \gg d\)) the expression you should get simplifies to
-
-\[\begin{aligned}
-E = \frac{1}{2 \pi \epsilon_0} \frac{p}{y^3}
-\end{aligned}\]
-
-\hypertarget{ringExSol}{%
-\section*{Exercise solution}\label{ringExSol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{ringEx}{Click here to go back to the exercise.})
-
-The field on the \(x\)-axis is \[\begin{aligned}
-E_x = \frac{xq}{4 \pi\epsilon_0 (x^2 + R^2)^{\frac{3}{2}}}
-\end{aligned}\]
-
-\hypertarget{ringEx2Sol}{%
-\section*{Exercise solution}\label{ringEx2Sol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{ringEx2}{Click here to go back to the exercise.})
-
-Bla bla bla insert explanation here.
-
-\hypertarget{GaussLineExSol}{%
-\section*{Exercise solution}\label{GaussLineExSol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{GaussLineEx}{Click here to go back to the exercise.})
-
-\[\label{eq:GLSol}
-E_r = \frac{\lambda}{2\pi\epsilon_0 r}\]
-
-\hypertarget{cyclotronExSol}{%
-\section*{Exercise solution}\label{cyclotronExSol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{cyclotronEx}{Click here to go back to the exercise.})
-
-\[\label{eq:cycloF}
-f = \frac{|q|\B}{2\pi m}\]
-
-\hypertarget{Kirchoff_ExSol}{%
-\section*{Exercise solution}\label{Kirchoff_ExSol}}
-\addcontentsline{toc}{section}{Exercise solution}
-
-(\protect\hyperlink{Kirchoff_Ex}{Click here to go back to the exercise.})
-
-\begin{figure}
-\centering
-\includegraphics[width=80mm,height=\textheight]{Figures/Kirchoff_Ex.png}
-\caption{image}
-\end{figure}
-
-Consider \(I_1\) to run clockwise around the top half of the loop and
-\(I_2\) to run clockwise around the bottom half of the loop. \(I_3\) is the
-current through the resistor \(R_3\) from left to right. From the junction
-rule: \(I_1 + I_3 = I_2\).\\
-From the loop rule going clockwise around the top loop:
-\(-V_1 - (I_1 \times R_1 + (I_3 \times R_3) = 0\).\\
-From the loop rule going clockwise around the bottom loop:
-\(V_2 - (I_3 \times R_3) - (I_2 \times R_2) = 0\).\\
-Since there are three equations and three unknowns (the three currents)
-the equations can be solved to give \(I_1=-\frac{4}{11} A\),
-\(I_2 = \frac{5}{11} A\), \(I_3 = \frac{9}{11} A\). The negative sign on
-\(I_1\) indicates that it is in the opposite direction to that chosen.
 
   \bibliography{book.bib,packages.bib}
 
