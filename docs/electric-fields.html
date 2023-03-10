@@ -23,7 +23,7 @@
 <meta name="author" content="Claire Greenland" />
 
 
-<meta name="date" content="2023-02-17" />
+<meta name="date" content="2023-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,11 +198,19 @@
 <p><em>Recommended reading:</em> Tipler &amp; Mosca 21-3</p>
 <p>Coulomb’s Law gives the magnitude and direction of the forces between
 charges.</p>
-<div class="figurehere">
-<div class="float">
-<img src="Figures/coulomb1.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ![image](Figures/coulomb1.png){width="80mm"} -->
+<!-- ::: -->
+<!-- # ```{r echo=FALSE, coulomb1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Two charges, $q_1$ and $q_2$, separated by a distance of $r_{12}$, with the unit vector $\hat{\r}_{12}$ pointing in the direction from $q_1$ to $q_2$."} -->
+<!-- # -->
+<!-- # knitr::include_graphics("Figures/coulomb1.png") -->
+<!-- # -->
+<!-- # ``` -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:coulomb1"></span>
+<img src="Figures/coulomb1.png" alt="Two charges, q_1 and q_2, separated by a distance of r_12, with the unit vector r_12 pointing in the direction from q_1 to q_2." width="70%" />
+<p class="caption">
+Figure 2.1: Two charges, q_1 and q_2, separated by a distance of r_12, with the unit vector r_12 pointing in the direction from q_1 to q_2.
+</p>
 </div>
 <p>The force on <span class="math inline">\(q_2\)</span> due to <span class="math inline">\(q_1\)</span> is given by:</p>
 <p><span class="math display" id="eq:coulombs">\[\begin{equation}
@@ -233,11 +241,14 @@ charge – the field is independent of the charge used to test it.</p>
 <h2><span class="header-section-number">2.3</span> Principle of superposition<a href="electric-fields.html#principle-of-superposition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>What if there are several charges?</p>
 <p>Have a look at the diagram below:</p>
-<div class="figurehere">
-<div class="float">
-<img src="Figures/superposition.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ![image](Figures/superposition.png){width="80mm"} -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:superposition"></span>
+<img src="Figures/superposition.png" alt="Three charges, 1, 2 and 3, where charges 1 and 3 are negative and charge 2 is positive. The forces shown are the forces exerted on charge 1 by charge 2 (F_21) and charge 3 (F_31), and the total resultant force on charge 1, F_R." width="70%" />
+<p class="caption">
+Figure 2.2: Three charges, 1, 2 and 3, where charges 1 and 3 are negative and charge 2 is positive. The forces shown are the forces exerted on charge 1 by charge 2 (F_21) and charge 3 (F_31), and the total resultant force on charge 1, F_R.
+</p>
 </div>
 <p>The principle of superposition says that the <strong>resultant force</strong> <span class="math inline">\(\mathbf{F}_R\)</span>
 on charge 1 due to charge 2 and charge 3 is simply the vector sum of the
@@ -257,18 +268,24 @@ charges present.</p>
 equal in magnitude, a small distance from each other. The field for an
 electric dipole can be calculated by summing the field due to the two
 charges.</p>
-<div class="figurehere">
-<div class="float">
-<img src="Figures/dipole_field.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_field.png){width="80mm"} -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dipoleField"></span>
+<img src="Figures/dipole_field.png" alt="The electric field associated with a dipole." width="70%" />
+<p class="caption">
+Figure 2.3: The electric field associated with a dipole.
+</p>
 </div>
 <p>Consider the diagram of the dipole below:</p>
-<div class="figurehere">
-<div class="float">
-<img src="Figures/dipole_diagram.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_diagram.png){width="80mm"} -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dipoleDiagram"></span>
+<img src="Figures/dipole_diagram.png" alt="A dipole represented in the x-y plane, where d is the distance between the charges." width="70%" />
+<p class="caption">
+Figure 2.4: A dipole represented in the x-y plane, where d is the distance between the charges.
+</p>
 </div>
 <p>The magnitude of the field at point <span class="math inline">\(P\)</span> is given by</p>
 <p><span class="math display" id="eq:fieldatP">\[\begin{equation}
@@ -281,11 +298,14 @@ E = \frac{1}{4 \pi \epsilon_0} \frac{qd}{\left( x^2 + \left( \frac{d}{2} \right)
 <p><em>Definition:</em> The electric dipole moment, <span class="math inline">\(\mathbf{p}\)</span>, is the product of the
 charge and the vector displacement from the negative charge to the
 positive charge in a dipole.</p>
-<div class="figurehere">
-<div class="float">
-<img src="Figures/dipole_moment.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_moment.png){width="80mm"} -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dipoleMoment"></span>
+<img src="Figures/dipole_moment.png" alt="A diagram of an electric dipole, showing the vector quantities f{d} and p, which are the length of the dipole and the dipole moment respectively." width="70%" />
+<p class="caption">
+Figure 2.5: A diagram of an electric dipole, showing the vector quantities f{d} and p, which are the length of the dipole and the dipole moment respectively.
+</p>
 </div>
 <p><span class="math display" id="eq:dipoleMoment">\[\begin{equation}
 \tag{2.6}
@@ -315,13 +335,16 @@ electric field due to the dipole can be reduced to:</p>
 has magnitude <span class="math inline">\(qE\)</span>, but since these forces are in opposite directions
 there is no net force on the dipole. There is, however a torque about
 the centre of the dipole.</p>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/dipole_extE.jpg" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/dipole_extE.jpg){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dipoleExtE"></span>
+<img src="Figures/dipole_extE.jpg" alt="Representation of a dipole placed in an external uniform electric field. &amp;theta; is the angle the dipole takes to the direction of the external electric field and F is the force on each charge of the dipole due to the external field." width="70%" />
+<p class="caption">
+Figure 2.6: Representation of a dipole placed in an external uniform electric field. θ is the angle the dipole takes to the direction of the external electric field and F is the force on each charge of the dipole due to the external field.
+</p>
 </div>
 <p>The torque about the centre of the dipole is</p>
 <p><span class="math display" id="eq:torqueDipole">\[\begin{equation}
@@ -332,10 +355,16 @@ the centre of the dipole.</p>
 represented in vector form as <span class="math inline">\(\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}\)</span>.</p>
 <p>The torque will cause the dipole to rotate and align itself with the
 electric field as shown here:</p>
-<div class="figurehere">
-<div class="center">
-<p><img src="Figures/dipole_align.png" style="width:80mm" alt="image" /> <span id="fig:diAlign" label="fig:diAlign"></span></p>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/dipole_align.png){width="80mm"} []{#fig:diAlign -->
+<!-- label="fig:diAlign"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center">
+<img src="Figures/dipole_align.png" alt=" " width="70%" />
+<p class="caption">
+</p>
 </div>
 <p>We can use the work done by the field to determine what is the minimum
 energy configuration (although it should be fairly obvious). The work
@@ -503,28 +532,34 @@ shell, as shown in , gives:
 E_r = \frac{Q}{4\pi\epsilon_0 r^2}
 \end{equation}\]</span></p>
 <p>i.e. the same as point charge or a solid sphere of charge.</p>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/GaussOutsideShell.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/GaussOutsideShell.png){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GaussOutsideShell"></span>
+<img src="Figures/GaussOutsideShell.png" alt="A spherical shell (dark red area) of charge Q and radius r producing an electric field E (light red arrows). The dotted line outside the shell can be selected as a Gaussian surface. " width="70%" />
+<p class="caption">
+Figure 2.7: A spherical shell (dark red area) of charge Q and radius r producing an electric field E (light red arrows). The dotted line outside the shell can be selected as a Gaussian surface.
+</p>
 </div>
 <p>Applying Gauss’s Law with a spherical Gaussian surface inside the shell
 gives <span class="math inline">\(E_r = 0\)</span> because there is no charge inside the surface.</p>
 <p><strong>There is no electric field inside a uniform shell of charge.</strong></p>
 <p>In a conductor, charges are free to move and as like charges repel
 excess charge will move to the outside surface of an isolated conductor.</p>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/GaussInsideShell.png" style="width:80mm" alt="image" />
-<div class="figcaption">image</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/GaussInsideShell.png){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:GaussInsideShell"></span>
+<img src="Figures/GaussInsideShell.png" alt="The cross-section of a conductor, where the red circles represent the excess charge which will move to the outside surface of the conductor. The dotted line can be selected as a Gaussian surface to show that the field inside the conductor is zero (because there is no (net) charge enclosed in this Gaussian surface)." width="70%" />
+<p class="caption">
+Figure 2.8: The cross-section of a conductor, where the red circles represent the excess charge which will move to the outside surface of the conductor. The dotted line can be selected as a Gaussian surface to show that the field inside the conductor is zero (because there is no (net) charge enclosed in this Gaussian surface).
+</p>
 </div>
-</div>
-</div>
-<p>Consider a Gaussian surface just inside a conductor as shown in . The
+<p>Consider a Gaussian surface just inside a conductor as shown in the diagram above. The
 electric field is zero everywhere inside the conductor – because all
 the charges are on the outside. The flux through the Gaussian surface
 must therefore be zero.</p>

@@ -24,18 +24,32 @@ vector field).
 The concept of a field circumvents the problem of action at a distance
 where one inanimate object is "aware\" that another has arrived.
 
-::: figurehere
-![image](Figures/blue_red_circs.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/blue_red_circs.png){width="80mm"} -->
+<!-- ::: -->
+
+
+```{r echo=FALSE, blueredCircs, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Two objects 'feeling' each other's prescence."}
+
+knitr::include_graphics("Figures/blue_red_circs.png")
+
+```
+
 
 We understand that the first body sets up a field and the second body
 interacts with the first via this field. There is no need for action at
 a distance because the field of the 1st object is present in space
 whether or not the second object is there.
 
-::: figurehere
-![image](Figures/blue_red_FIELD.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/blue_red_FIELD.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, blueredField, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Two objects 'feeling' each other's prescence with the help of a field."}
+
+knitr::include_graphics("Figures/blue_red_FIELD.png")
+
+```
 
 ### Charges
 
@@ -79,9 +93,15 @@ A scalar field is characterized at each point by a single number. e.g.
 the temperature, $T$, at each position in a block of metal heated at
 some places and cooled at others.
 
-::: figurehere
-![image](Figures/isotherms.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/isotherms.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, isotherms, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Contours of constant temperature i.e. isotherms. Temperature fields are scalar fields, having one value of temperature at each point in space. Heat flow, however, has an associated vector field, as it has a direction and magnitude for each point in space (blue arrows)."}
+
+knitr::include_graphics("Figures/isotherms.png")
+
+```
 
 $T$ is a function of position i.e. $T = T(x,y,z)$. At every point we can
 measure the scalar value of the temperature $T$. The black lines
@@ -189,9 +209,16 @@ of lines indicates the strength of the field at a point. The diagram
 shows the electric field lines for two positive point charges of the
 same magnitude.
 
-::: figurehere
-![image](Figures/Efield_like.jpg){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/Efield_like.jpg){width="80mm"} -->
+<!-- ::: -->
+
+
+```{r echo=FALSE, EfieldLike, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Representation of the electric field of two positive charges (like charges) placed close together."}
+
+knitr::include_graphics("Figures/Efield_like.jpg")
+
+```
 
 Note that the field lines are symmetric as they leave the charges. They
 do not cross.
@@ -208,12 +235,19 @@ the dashed black lines. The following website -
 different charge configurations and see the field lines and
 equipotentials.
 
-::: figurehere
-![image](Figures/equipotentials.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/equipotentials.png){width="80mm"} -->
+<!-- ::: -->
 
-::: flushleft
-:::
+<!-- ::: flushleft -->
+<!-- ::: -->
+
+```{r echo=FALSE, equipotentials, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Representation of a field radiating outwards from a point (blue lines), showing how the equipotentials (black dotted lines) are always perpendicular to the field lines."}
+
+knitr::include_graphics("Figures/equipotentials.png")
+
+```
+
 
 ## Summary
 
@@ -239,9 +273,23 @@ equipotentials.
 Coulomb's Law gives the magnitude and direction of the forces between
 charges.
 
-::: figurehere
-![image](Figures/coulomb1.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/coulomb1.png){width="80mm"} -->
+<!-- ::: -->
+
+<!-- # ```{r echo=FALSE, coulomb1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Two charges, $q_1$ and $q_2$, separated by a distance of $r_{12}$, with the unit vector $\hat{\r}_{12}$ pointing in the direction from $q_1$ to $q_2$."} -->
+<!-- # -->
+<!-- # knitr::include_graphics("Figures/coulomb1.png") -->
+<!-- # -->
+<!-- # ``` -->
+
+
+```{r echo=FALSE, coulomb1, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Two charges, q_1 and q_2, separated by a distance of r_12, with the unit vector r_12 pointing in the direction from q_1 to q_2."}
+
+knitr::include_graphics("Figures/coulomb1.png")
+
+```
+
 
 The force on $q_2$ due to $q_1$ is given by:
 
@@ -279,9 +327,18 @@ What if there are several charges?
 
 Have a look at the diagram below:
 
-::: figurehere
-![image](Figures/superposition.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/superposition.png){width="80mm"} -->
+<!-- ::: -->
+
+
+```{r echo=FALSE, superposition, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Three charges, 1, 2 and 3, where charges 1 and 3 are negative and charge 2 is positive. The forces shown are the forces exerted on charge 1 by charge 2 (F_21) and charge 3 (F_31), and the total resultant force on charge 1, F_R."}
+
+knitr::include_graphics("Figures/superposition.png")
+
+```
+
+
 
 The principle of superposition says that the **resultant force** $\mathbf{F}_R$
 on charge 1 due to charge 2 and charge 3 is simply the vector sum of the
@@ -306,15 +363,28 @@ equal in magnitude, a small distance from each other. The field for an
 electric dipole can be calculated by summing the field due to the two
 charges.
 
-::: figurehere
-![image](Figures/dipole_field.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_field.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, dipoleField, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The electric field associated with a dipole."}
+
+knitr::include_graphics("Figures/dipole_field.png")
+
+```
 
 Consider the diagram of the dipole below:
 
-::: figurehere
-![image](Figures/dipole_diagram.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_diagram.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, dipoleDiagram, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A dipole represented in the x-y plane, where d is the distance between the charges."}
+
+knitr::include_graphics("Figures/dipole_diagram.png")
+
+```
+
 
 The magnitude of the field at point $P$ is given by
 
@@ -331,9 +401,15 @@ and it is in the $-\hat{\mathbf{j}}$ (or $-\hat{\mathbf{y}}$) direction.
 charge and the vector displacement from the negative charge to the
 positive charge in a dipole.
 
-::: figurehere
-![image](Figures/dipole_moment.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/dipole_moment.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, dipoleMoment, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A diagram of an electric dipole, showing the vector quantities \bf{d} and p, which are the length of the dipole and the dipole moment respectively."}
+
+knitr::include_graphics("Figures/dipole_moment.png")
+
+```
 
 \begin{equation}
 (\#eq:dipoleMoment)
@@ -368,11 +444,17 @@ has magnitude $qE$, but since these forces are in opposite directions
 there is no net force on the dipole. There is, however a torque about
 the centre of the dipole.
 
-::: figurehere
-::: center
-![image](Figures/dipole_extE.jpg){width="80mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/dipole_extE.jpg){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, dipoleExtE, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Representation of a dipole placed in an external uniform electric field. &theta; is the angle the dipole takes to the direction of the external electric field and F is the force on each charge of the dipole due to the external field."}
+
+knitr::include_graphics("Figures/dipole_extE.jpg")
+
+```
 
 The torque about the centre of the dipole is
 
@@ -387,12 +469,19 @@ represented in vector form as $\boldsymbol{\tau} = \mathbf{p} \times \mathbf{E}$
 The torque will cause the dipole to rotate and align itself with the
 electric field as shown here:
 
-::: figurehere
-::: center
-![image](Figures/dipole_align.png){width="80mm"} []{#fig:diAlign
-label="fig:diAlign"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/dipole_align.png){width="80mm"} []{#fig:diAlign -->
+<!-- label="fig:diAlign"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, dipoleAlign, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=" "}
+
+knitr::include_graphics("Figures/dipole_align.png")
+
+```
+
 
 We can use the work done by the field to determine what is the minimum
 energy configuration (although it should be fairly obvious). The work
@@ -594,11 +683,17 @@ E_r = \frac{Q}{4\pi\epsilon_0 r^2}
 
 i.e. the same as point charge or a solid sphere of charge.
 
-::: figurehere
-::: center
-![image](Figures/GaussOutsideShell.png){width="80mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/GaussOutsideShell.png){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, GaussOutsideShell, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A spherical shell (dark red area) of charge Q and radius r producing an electric field E (light red arrows). The dotted line outside the shell can be selected as a Gaussian surface. "}
+
+knitr::include_graphics("Figures/GaussOutsideShell.png")
+
+```
 
 Applying Gauss's Law with a spherical Gaussian surface inside the shell
 gives $E_r = 0$ because there is no charge inside the surface.
@@ -608,13 +703,19 @@ gives $E_r = 0$ because there is no charge inside the surface.
 In a conductor, charges are free to move and as like charges repel
 excess charge will move to the outside surface of an isolated conductor.
 
-::: figurehere
-::: center
-![image](Figures/GaussInsideShell.png){width="80mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/GaussInsideShell.png){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
 
-Consider a Gaussian surface just inside a conductor as shown in . The
+```{r echo=FALSE, GaussInsideShell, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="The cross-section of a conductor, where the red circles represent the excess charge which will move to the outside surface of the conductor. The dotted line can be selected as a Gaussian surface to show that the field inside the conductor is zero (because there is no (net) charge enclosed in this Gaussian surface)."}
+
+knitr::include_graphics("Figures/GaussInsideShell.png")
+
+```
+
+Consider a Gaussian surface just inside a conductor as shown in the diagram above. The
 electric field is zero everywhere inside the conductor -- because all
 the charges are on the outside. The flux through the Gaussian surface
 must therefore be zero.
@@ -731,9 +832,15 @@ is parallel to the field lines -- a positive charge moves along the
 field lines in the direction indicated. In magnetic fields, the force on
 a *moving* charge is perpendicular to the field lines.
 
-::: figurehere
-![image](Figures/MagFields.png){width="120mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/MagFields.png){width="120mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, MagFields, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Left: The magnetic field produced by a bar magnet. Right: Section of a wire (yellow) carrying current I and the magnetic field B that it produces."}
+
+knitr::include_graphics("Figures/MagFields.png")
+
+```
 
 Magnetic field lines always form closed loops whereas electric field
 lines begin and end on charges. This means that a version of Gauss' Law
@@ -768,11 +875,17 @@ always perpendicular to the velocity vector of the particle it cannot do
 any work on the charge and therefore cannot change the energy and speed
 of the particle.
 
-::: figurehere
-![image](Figures/bubble_chamber.jpg){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/bubble_chamber.jpg){width="80mm"} -->
+<!-- ::: -->
 
-The artistically enhanced image in was produced by the Big European
+```{r echo=FALSE, bubbleChamber, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Enhanced image of the traces in a bubble chamber, which shows the paths of charged particles."}
+
+knitr::include_graphics("Figures/bubble_chamber.jpg")
+
+```
+
+The artistically enhanced image above was produced by the Big European
 Bubble Chamber (BEBC), which started up at CERN in 1973. Charged
 particles passing through a chamber filled with hydrogen-neon liquid
 leave bubbles along their paths (Image: BEBC). You can see the spiral
@@ -801,9 +914,15 @@ charge/mass ratio.
 
 *Recommended reading:* Tipler & Mosca 26-2
 
-::: figurehere
-![image](Figures/circular_path.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/circular_path.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, circularPath, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A charged particle travelling with velocity $\v$ along a circular path in a magnetic field B. The magnetic field provides the centripetal force F causing the circular motion."}
+
+knitr::include_graphics("Figures/circular_path.png")
+
+```
 
 If $\mathbf{B}$ and $\mathbf{v}$ are perpendicular, a particle moving in a constant $\mathbf{B}$
 field is forced to move in a circle by the (centripetal) magnetic force.
@@ -821,9 +940,15 @@ Charged particles will tend to spiral along field lines. By shaping the
 magnetic field lines as shown in , it is possible to confine charged
 particles inside a "magnetic bottle\".
 
-::: figurehere
-![image](Figures/magBottle.png){width="80mm"}
-:::
+<!-- ::: figurehere -->
+<!-- ![image](Figures/magBottle.png){width="80mm"} -->
+<!-- ::: -->
+
+```{r echo=FALSE, magBottle, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A magnetic bottle: Magnetic field shape (green lines) that allows a moving charged particle to be confined within the field lines. Search 'magnetic bottle' on YouTube to see a demonstration of how this works."}
+
+knitr::include_graphics("Figures/magBottle.png")
+
+```
 
 Charged particles are also confined along the Earth's field lines. This
 protects us from cosmic radiation and is also responsible for the
@@ -862,13 +987,19 @@ $\mathbf{F} = I \mathrm{L} \times \mathbf{B}$ can be used to make a motor. The p
 operation of a motor made of a single loop of wire is shown nicely in
 <http://www.walter-fendt.de/html5/phen/electricmotor_en.htm>.
 
-::: figurehere
-::: center
-![image](Figures/motor_pics.png){width="120mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/motor_pics.png){width="120mm"} -->
+<!-- ::: -->
+<!-- ::: -->
 
-The length of the coil as viewed in **a)** is $b$. The current at the
+```{r echo=FALSE, motorPics, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="\textbf{a)} The top of a wire loop as viewed from the positive z-direction. The red arrow shows the direction of the current I. The loop is subject to magnetic field B in a direction parallel to the x-axis. \textbf{b)} Side view of the same current loop as in \textbf{a)}, showing the direction of the forces on each of the four sides of the loop - F_1, F_2, F_3 and F_4. "}
+
+knitr::include_graphics("Figures/motor_pics.png")
+
+```
+
+The length of the coil as viewed in **a)** above is $b$. The current at the
 top of the loop as viewed from positive $z$ is flowing down the page to
 the right. Using the right-hand rule to work out the direction of
 $\mathrm{L} \times \mathbf{B}$ gives a force in the positive $z$-direction. This will be
@@ -912,11 +1043,16 @@ current elements where these do not necessarily lie on a straight line
 or other simple shape. The magnetic field could have been produced by
 another current which give us interactions between currents.
 
-::: figurehere
-::: center
-![image](Figures/fieldmovingcharge.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/fieldmovingcharge.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+```{r echo=FALSE, fieldmovingcharge, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A point charge q moving with velocity v produces a magnetic field B at point x, which is a distance r from the charge."}
+
+knitr::include_graphics("Figures/fieldmovingcharge.png")
+
+```
 
 A point charge, $q$ ,moving with velocity, $v$, produces a magnetic
 field $B$ at a distance $r$ in a direction given by
@@ -992,11 +1128,17 @@ constant magnitude at a constant distance from the wire. So we pick a
 loop that is also circular. The magnitude of $\mathbf{B}$ is constant along the
 loop and the loop is always parallel to $\mathbf{B}$.
 
-::: figurehere
-::: center
-![image](Figures/wireField.png){width="50mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/wireField.png){width="50mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, wireField, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Top view of a wire carrying current out of the page. The magnetic field lines form loops (dotted line) in the direction shown by the red arrow. The magnetic field strength at a distance R from the wire can be found using Ampere's Law."}
+
+knitr::include_graphics("Figures/wireField.png")
+
+```
 
 Ampère's Law states $\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s} = \mu_0 I$. If we perform the
 integral in the clockwise direction then the element of the path $\mathrm{d}\mathbf{s}$
@@ -1025,26 +1167,35 @@ usually much longer than the diameter. It looks like a set of coils next
 to each other and the overall field is the same as a for a bar magnet of
 the same shape.
 
-::: figurehere
-::: center
-![image](Figures/loopNsolenoid.png){width="120mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/loopNsolenoid.png){width="120mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, loopNsolenoid, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Representation of the magnetic field lines produced by: a single current loop (left); and a solenoid (right)."}
+
+knitr::include_graphics("Figures/loopNsolenoid.png")
+```
 
 In this example we calculate the magnetic field of a long solenoid with
 $n$ turns per unit length. As the length tends to infinity, the field
 outside tends to zero and the field inside becomes increasingly uniform
-and parallel to the axis. We need to find a suitable Ampèrian loop ().
+and parallel to the axis. We need to find a suitable Ampèrian loop (see figure below).
 In this case we pick a rectangular loop where one side (a-b) lies within
 the solenoid and is parallel to the field. One side (c-d) is outside the
 solenoid where the field is 0. And the two remaining sides are partly
 perpendicular to the field and partly in a field free region.
 
-::: figurehere
-::: center
-![image](Figures/amperianLoop.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/amperianLoop.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+```{r echo=FALSE, amperianLoop, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Cross-section of a solenoid, taken through the diameter of the loops. Hence the top row of wires carry current coming out of the page and the bottom row of wires carry current into the page."}
+
+knitr::include_graphics("Figures/amperianLoop.png")
+```
 
 The only contribution to $\oint \mathbf{B} \cdot \mathrm{d}\mathbf{s}$ from the loop is the side
 ab where, in this case, the field is parallel to the path. Since $\mathbf{B}$ is
@@ -1065,11 +1216,16 @@ A changing magnetic flux in a circuit will produce a current that
 opposes that change. Faraday's Law of induction relates the induced EMF
 in a circuit to the rate of change of magnetic flux through a circuit.
 
-::: figurehere
-::: center
-![image](Figures/circuit_GR.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/circuit_GR.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, circuitGR, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Current loop including a resistor and a galvanometer. The red arrow indicates the direction of the current. A bar magnet is moved towards and away from the coil."}
+
+knitr::include_graphics("Figures/circuit_GR.png")
+```
 
 Consider the case of the circuit shown in that has a loop of wire.
 
@@ -1093,11 +1249,16 @@ the same idea here for Faraday's Law of induction. The changing flux
 through the circuit could be due to a magnetic field produced by a
 second circuit.
 
-::: figurehere
-::: center
-![image](Figures/magFlux.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/magFlux.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, magFlux, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A magnetic field B passing through an arbitrarily-shaped surface. The vector ds is the infinitesimal vector perpendicular to the surface. &theta; is the angle between ds and the direction of the magnetic field."}
+
+knitr::include_graphics("Figures/magFlux.png")
+```
 
 The magnetic flux through a surface is the component of the field
 perpendicular to the surface multiplied by the area of the surface.
@@ -1132,11 +1293,16 @@ then the induced emf is simply multiplied by $N$.
 There are a number of devices that use inductance to useful effect.
 Transformers are one such device.
 
-::: figurehere
-::: center
-![image](Figures/transformers.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/transformers.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, transformers, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Schematic of a transformer. A voltage V_1 is applied to the primary coil (left), which induces a different voltage V_2 in the secondary coil (right)."}
+
+knitr::include_graphics("Figures/transformers.png")
+```
 
 Transformers (see ) consist of two or more coils (usually with a
 ferromagnetic core) so that the field from one coil is coupled to the
@@ -1163,11 +1329,15 @@ current applications such as welding power supplies.
 A dynamo is a type of generator, where a generator refers to a device
 that turns mechanical motion into electrical energy.
 
-::: figurehere
-::: center
-![image](Figures/dynamo.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/dynamo.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+```{r echo=FALSE, dynamo, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Schematic diagram of a dynamo, a type of generator, where the rotation of a coil generates an alternating current."}
+
+knitr::include_graphics("Figures/dynamo.png")
+```
 
 is taken from <http://www.walter-fendt.de/html5/phen/generator_en.htm>,
 an app which allows you to simulate a generator by changing certain
@@ -1180,11 +1350,15 @@ alternating current.
 
 ### The moving coil microphone
 
-::: figurehere
-::: center
-![image](Figures/coilMic.png){width="90mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/coilMic.png){width="90mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+```{r echo=FALSE, coilMic, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Schematic diagram of a moving coil microphone. Inside the microphone there is a diaphragm which is free to move. The diaphragm is attached to a coil, which is placed in the magnetic field of a permanent magnet."}
+
+knitr::include_graphics("Figures/coilMic.png")
+```
 
 In a moving coil microphone, movement of the diaphragm by sound entering
 the device cause the coil to move in the field of the magnet generating
@@ -1196,12 +1370,17 @@ Have a look at the image below. Passing a current through the thick
 copper coil induces currents in the sample in the centre of the coil
 which can heat very rapidly to very high temperatures.
 
-::: figurehere
-::: center
-![image](Figures/eddyCurHeat.jpg){width="70mm"} []{#fig:eddyHeat
-label="fig:eddyHeat"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/eddyCurHeat.jpg){width="70mm"} []{#fig:eddyHeat -->
+<!-- label="fig:eddyHeat"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, eddyCurHeat, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
+
+knitr::include_graphics("Figures/eddyCurHeat.jpg")
+```
 
 ## Lenz's Law
 
@@ -1210,11 +1389,15 @@ label="fig:eddyHeat"}
 Lenz's Law states that the induced emf and induced current are in such a
 direction as to oppose the change that induces them.
 
-::: figurehere
-::: center
-![image](Figures/movingMag.png){width="70mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/movingMag.png){width="70mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+```{r echo=FALSE, movingMag, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+
+knitr::include_graphics("Figures/movingMag.png")
+```
 
 Consider the bar magnet and current loop in . The motion of the N pole
 towards the loop induces a current which flows so as to induce a N pole
@@ -1321,11 +1504,16 @@ We consider the following components;
 
 These components present obstructions to current flow through circuits.
 
-::: figurehere
-::: center
-![image](Figures/ances_summary.png){width="120mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/ances_summary.png){width="120mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, ancesSummary, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+
+knitr::include_graphics("Figures/ances_summary.png")
+```
 
 ### Resistors
 
@@ -1385,11 +1573,16 @@ induces an EMF that opposes the change in current in the device itself:
 V_L  = -L \frac{\mathrm{d} I}{\mathrm{d} t}
 \end{equation}
 
-::: figurehere
-::: center
-![image](Figures/LCR_symbols.png){width="120mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LCR_symbols.png){width="120mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, LCRsymbols, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+
+knitr::include_graphics("Figures/LCR_symbols.png")
+```
 
 ## Kirchhoff's Rules
 
@@ -1425,11 +1618,17 @@ matched by current flow out of a junction. The rule states:\
 I_1 = I_2 + I_3
 \end{equation}
 
-::: figurehere
-::: center
-![image](Figures/junction_rule.png){width="80mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/junction_rule.png){width="80mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+
+```{r echo=FALSE, junctionRule, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
+
+knitr::include_graphics("Figures/junction_rule.png")
+```
 
 ::: flushleft
 :::
@@ -1447,11 +1646,17 @@ at a capacitor charging.
 
 ### Example: Series RC circuit {#example-series-rc-circuit .unnumbered}
 
-::: figurehere
-::: center
-![image](Figures/seriesRC.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/seriesRC.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+
+```{r echo=FALSE, seriesRC, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
+
+knitr::include_graphics("Figures/seriesRC.png")
+```
 
 When the switch is closed a current flows in a clockwise direction.
 Considering the potential difference to be positive if it increases in a
@@ -1495,11 +1700,17 @@ $V_L = \epsilon \exp⁡\left(- \frac{Rt}{L} \right)$.\
 Potential difference across the resistor:
 $V_R = \epsilon \left (1 - \exp⁡ \left( - \frac{Rt}{L} \right) \right)$.
 
-::: figurehere
-::: center
-![image](Figures/LR_circuit.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LR_circuit.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, LRcircuit, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
+
+knitr::include_graphics("Figures/LR_circuit.png")
+```
+
 
 ## Oscillations in LC and LCR circuits
 
