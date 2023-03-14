@@ -15,8 +15,6 @@ link-citations: yes
 # github-repo: rstudio/bookdown-demo
 ---
 
-<!--chapter:end:index.Rmd-->
-
 # Fields -- Basics
 
 ## Aims of this section {#aims-of-this-section .unnumbered}
@@ -2044,5 +2042,24 @@ field. The energy stored, $U_C$, can be found by integrating.
 
 
 
-<!--chapter:end:FieldNotesMarkdown.Rmd-->
+<!--chapter:end:index.Rmd-->
+
+--- 
+title: "Fields"
+author: "Claire Greenland"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: [bookdown::gitbook, bookdown::pdf_book]
+documentclass: book
+biblio-style: apalike
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is the Fields notes for Core Physics II.
+link-citations: yes
+# github-repo: rstudio/bookdown-demo
+---
+
+<!--chapter:end:index_old.Rmd-->
 
