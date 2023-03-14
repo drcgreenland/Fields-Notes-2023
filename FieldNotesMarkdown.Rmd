@@ -7,8 +7,6 @@ output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is the Fields notes for Core Physics II.
 link-citations: yes
@@ -1411,7 +1409,7 @@ direction as to oppose the change that induces them.
 <!-- ![image](Figures/movingMag.png){width="70mm"} -->
 <!-- ::: -->
 <!-- ::: -->
-```{r echo=FALSE, movingMag, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+```{r echo=FALSE, movingMag, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A current loop and its associated magnetic field (left) and a bar magnet (right)."}
 
 knitr::include_graphics("Figures/movingMag.png")
 ```
@@ -1527,7 +1525,7 @@ These components present obstructions to current flow through circuits.
 <!-- ::: -->
 <!-- ::: -->
 
-```{r echo=FALSE, ancesSummary, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+```{r echo=FALSE, ancesSummary, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
 
 knitr::include_graphics("Figures/ances_summary.png")
 ```
@@ -1596,7 +1594,7 @@ V_L  = -L \frac{\mathrm{d} I}{\mathrm{d} t}
 <!-- ::: -->
 <!-- ::: -->
 
-```{r echo=FALSE, LCRsymbols, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="A bar magnet (right) and a current loop and itss associated magnetic field (left.)"}
+```{r echo=FALSE, LCRsymbols, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="Symbols for a) a resistor, b) a capacitor and c) an inductor commonly used in circuit diagrams."}
 
 knitr::include_graphics("Figures/LCR_symbols.png")
 ```
@@ -1740,11 +1738,17 @@ next.
 
 ### Example: LC circuit {#example-lc-circuit .unnumbered}
 
-::: figurehere
-::: center
-![image](Figures/LC_circuit.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LC_circuit.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, LCcircuit, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="An LC circuit."}
+
+knitr::include_graphics("Figures/LC_circuit.png")
+```
+
 
 Using Kirchhoff's **loop rule**, $\sum_i \epsilon_i = 0$.\
 The expressions for $V_C$ and $V_L$ are $V_C = \frac{Q}{C}$,
@@ -1904,11 +1908,16 @@ A similar argument leads to $Z_L = i\omega L$.
 
 ## Combining complex impedances
 
-::: figurehere
-::: center
-![image](Figures/LCR_circuit.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LCR_circuit.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, LCRcircuit, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap="An LCR circuit."}
+
+knitr::include_graphics("Figures/LCR_circuit.png")
+```
 
 Impedances can be combined using the addition rules for resistors.\
 Series: 
@@ -1957,11 +1966,16 @@ Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( 
 
 We can represent the impedance on an Argand diagram as shown below.
 
-::: figurehere
-::: center
-![image](Figures/Z_argand.png){width="100mm"}
-:::
-:::
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/Z_argand.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+```{r echo=FALSE, Zargand, out.width='70%', fig.show='hold', fig.align="center", auto_pdf=TRUE, fig.cap=""}
+
+knitr::include_graphics("Figures/Z_argand.png")
+```
 
 ### Phase of current at resonance {#phase-of-current-at-resonance .unnumbered}
 

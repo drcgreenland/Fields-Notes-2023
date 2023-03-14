@@ -23,7 +23,7 @@
 <meta name="author" content="Claire Greenland" />
 
 
-<meta name="date" content="2023-03-10" />
+<meta name="date" content="2023-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,12 +240,7 @@ difference between their terminals</p>
 <!-- ![image](Figures/ances_summary.png){width="120mm"} -->
 <!-- ::: -->
 <!-- ::: -->
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ancesSummary"></span>
-<img src="Figures/ances_summary.png" alt="A bar magnet (right) and a current loop and itss associated magnetic field (left.)" width="70%" />
-<p class="caption">
-Figure 4.1: A bar magnet (right) and a current loop and itss associated magnetic field (left.)
-</p>
-</div>
+<p><img src="Figures/ances_summary.png" width="70%" style="display: block; margin: auto;" /></p>
 <div id="resistors" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Resistors<a href="circuits.html#resistors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Recommended reading:</em> Tipler &amp; Mosca 25-2</p>
@@ -300,9 +295,9 @@ V_L  = -L \frac{\mathrm{d} I}{\mathrm{d} t}
 <!-- ::: -->
 <!-- ::: -->
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:LCRsymbols"></span>
-<img src="Figures/LCR_symbols.png" alt="A bar magnet (right) and a current loop and itss associated magnetic field (left.)" width="70%" />
+<img src="Figures/LCR_symbols.png" alt="Symbols for a) a resistor, b) a capacitor and c) an inductor commonly used in circuit diagrams." width="70%" />
 <p class="caption">
-Figure 4.2: A bar magnet (right) and a current loop and itss associated magnetic field (left.)
+Figure 4.1: Symbols for a) a resistor, b) a capacitor and c) an inductor commonly used in circuit diagrams.
 </p>
 </div>
 </div>
@@ -421,13 +416,16 @@ capacitor. If the battery is then removed, we can calculate what happens
 next.</p>
 <div id="example-lc-circuit" class="section level3 unnumbered hasAnchor">
 <h3>Example: LC circuit<a href="circuits.html#example-lc-circuit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/LC_circuit.png" style="width:100mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LC_circuit.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:LCcircuit"></span>
+<img src="Figures/LC_circuit.png" alt="An LC circuit." width="70%" />
+<p class="caption">
+Figure 4.2: An LC circuit.
+</p>
 </div>
 <p>Using Kirchhoff’s <strong>loop rule</strong>, <span class="math inline">\(\sum_i \epsilon_i = 0\)</span>.<br />
 The expressions for <span class="math inline">\(V_C\)</span> and <span class="math inline">\(V_L\)</span> are <span class="math inline">\(V_C = \frac{Q}{C}\)</span>,
@@ -560,13 +558,16 @@ Z_C = \frac{V}{I} = \frac{V_0 e^{i\omega t} }{C V_0 e^{i\omega t}} = \frac{1}{i\
 </div>
 <div id="combining-complex-impedances" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Combining complex impedances<a href="circuits.html#combining-complex-impedances" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/LCR_circuit.png" style="width:100mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/LCR_circuit.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:LCRcircuit"></span>
+<img src="Figures/LCR_circuit.png" alt="An LCR circuit." width="70%" />
+<p class="caption">
+Figure 4.3: An LCR circuit.
+</p>
 </div>
 <p>Impedances can be combined using the addition rules for resistors.<br />
 Series:
@@ -605,14 +606,12 @@ Z_{tot} = R + i\left( - \frac{1}{\omega C} + \omega L \right)
 Z = \sqrt{ R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2 } \exp⁡ \left( i \tan^{-1}⁡ \left( \frac{\omega L - \frac{1}{\omega C} }{R} \right)\right)
 \end{equation}\]</span></p>
 <p>We can represent the impedance on an Argand diagram as shown below.</p>
-<div class="figurehere">
-<div class="center">
-<div class="float">
-<img src="Figures/Z_argand.png" style="width:100mm" alt="image" />
-<div class="figcaption">image</div>
-</div>
-</div>
-</div>
+<!-- ::: figurehere -->
+<!-- ::: center -->
+<!-- ![image](Figures/Z_argand.png){width="100mm"} -->
+<!-- ::: -->
+<!-- ::: -->
+<p><img src="Figures/Z_argand.png" width="70%" style="display: block; margin: auto;" /></p>
 <div id="phase-of-current-at-resonance" class="section level3 unnumbered hasAnchor">
 <h3>Phase of current at resonance<a href="circuits.html#phase-of-current-at-resonance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The LC circuit has a natural frequency of
